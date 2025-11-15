@@ -519,6 +519,7 @@ if %errorlevel% neq 0 goto error_py
     > 右键 .uproject 文件生成vs 工程，然后使用vs打开，构建项目（点击菜单中的`生成`->`生成解决方案`）。
     > 注：执行`make clean`后然后执行`make launch-only`后会出现这种情况。
 
+以上为常见 bat 脚本执行报错的解决方法，如果是更深入 C++ 层次的错误，请参考 [在 Windows 上进行模拟器的调试](./tuto_D_windows_debug.md) 。
 
 ---
 

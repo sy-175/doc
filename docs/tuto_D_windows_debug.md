@@ -1,4 +1,4 @@
-# 在 Windows 上进行 Carla 的调试
+# 在 Windows 上进行模拟器的调试
 
 - [__虚幻引擎Carla插件的调试__](#debug_CarlaUE4)
 - [__C++客户端调试__](#cpp_client_debug)
@@ -16,7 +16,8 @@
     - [__技巧__](#trick)
     - [__学习__](#learn)
 
-程序调用流程：Python、libcarla.cp37-win_amd64.pyd、LibCarla、CarlaUE4。
+![CARLA Modules](img/build_modules.jpg)
+
 
 ## 虚幻引擎Carla插件的调试 <span id="debug_CarlaUE4"></span>
 1. 进入目录`carla/Unreal/CarlaUE4/`，右键文件`CarlaUE4.uproject`，选择运行`Generate Visual Studio project files`，在当前目录中将会生成VS的工程文件，双击打开`CarlaUE4.sln`。
