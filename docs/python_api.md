@@ -2680,7 +2680,7 @@ _</font>
     - **参数:**
         - `distance` (_float<small> - 米</small>_) - 车辆之间的米数。
 - <a name="carla.TrafficManager.set_hybrid_physics_mode"></a>**<font color="#7fb800">set_hybrid_physics_mode</font>**(<font color="#00a6ed">**self**</font>, <font color="#00a6ed">**enabled**=False</font>)  
-启用或禁用混合物理模式。在此模式下，距离自身车辆超过一定半径的车辆将禁用其物理功能。通过不计算车辆动力学将降低计算成本。车辆将被传送。
+启用或禁用混合物理模式。在此模式下，距离自身车辆超过一定半径的车辆将禁用其物理功能。通过不计算车辆动力学将降低计算成本。车辆将被传送（场景中部分车辆的速度拿不到）。
     - **参数:**
         - `enabled` (_bool_) - 如果为 __True__ ，则启用混合物理。
 - <a name="carla.TrafficManager.set_hybrid_physics_radius"></a>**<font color="#7fb800">set_hybrid_physics_radius</font>**(<font color="#00a6ed">**self**</font>, <font color="#00a6ed">**r**=50.0</font>)  
