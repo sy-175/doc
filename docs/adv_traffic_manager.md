@@ -134,7 +134,7 @@ __3. 在模拟中应用命令__
 - 将计算分成一系列的[阶段](#stages-of-the-control-loop)。
 - 在阶段之间创建同步墙以保证一致性。所有车辆的计算在任何车辆移动到下一阶段之前完成，确保所有车辆在同一帧中更新。
 - 协调各[阶段](#stages-of-the-control-loop)之间的过渡，使所有计算同步完成。
-- 当最后一个阶段（**[运动规划阶段](#stage-4-motion-planner-stage）和[车辆灯光阶段](#stage-5-vehicle-lights-stage)**)完成时，将[命令数组](#command-array)发送到服务器，因此在命令计算和命令应用之间没有帧延迟。
+- 当最后一个阶段（[运动规划阶段](#stage-4-motion-planner-stage) 和[车辆灯光阶段](#stage-5-vehicle-lights-stage)**)完成时，将[命令数组](#command-array)发送到服务器，因此在命令计算和命令应用之间没有帧延迟。
 
 相关的 C++ 文件: [`TrafficManagerLocal.cpp`](https://github.com/OpenHUTB/carla/blob/ue4-dev/LibCarla/source/carla/trafficmanager/TrafficManagerLocal.cpp) 。
 
