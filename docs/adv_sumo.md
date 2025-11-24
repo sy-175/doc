@@ -36,9 +36,14 @@ python3 config.py --map Town04
 cd ~/carla/Co-Simulation/Sumo
 python3 run_synchronization.py examples/Town04.sumocfg  --sumo-gui
 ```
-!!! 笔记
+
+运行后弹出 SUMO 界面，点击菜单栏中的`执行`按钮，即可弹出 SUMO 和 Carla 协同仿真界面。
+
+!!! 笔记 1
 	运行时候可能报错：`module 'traci' has no attribute 'sumolib'`，是因为`sumolib`是独立的包，不在`traci`里面，需要把`carla/Co-Simulation/Sumo/sumo_integration/sumo_simulation.py`的304行的这一句代`sumo_net = traci.sumolib.net.readNet(net_file)`码改成`sumo_net = sumolib.net.readNet(net_file)`。
-    
+
+!!! 笔记 2
+    如果运行时报错：`Error: tcpip:Socket:recvAndcheck @ recv: peer shutdown`，可能是客户端和服务端的版本不一致。解决： [下载](https://github.com/OpenHUTB/hutb/releases) 最新的服务端，并利用里面的`Co-Simulation/Sumo/`里的`run_synchronization.py`和`PythonAPI\carla\dist\`中.whl文件安装的客户端运行即可。
 
 ---
 ## 运行自定义联合模拟 <span id="run-a-custom-co-simulation"></span>
