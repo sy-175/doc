@@ -35,7 +35,10 @@ git reset HEAD
 
 ###### 查看仓库的容量
 
-进入 [项目首页](https://git.code.tencent.com/OpenHUTB/Content) （如果没有权限访问，则注册后发送用户名到 [whd@hutb.edu.cn](whd@hutb.edu.cn) ），打开左侧的`设置->高级设置`，在页面中选择`版本库设置`。该产品的版本库为5GB，LFS储存为500GB。
+进入 [项目首页](https://git.code.tencent.com/OpenHUTB/Content) （如果没有权限访问，则注册后发送用户名到 [whd@hutb.edu.cn](whd@hutb.edu.cn) ），打开左侧的`设置->高级设置`，在页面中选择`版本库设置`。
+
+该产品单仓库容量配额为 5GB，单文件限制 128M；LFS储存为 512 GB、单 LFS 文件限制为 5 G。
+
 
 ###### 注册网络回调钩子
 

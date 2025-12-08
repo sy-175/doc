@@ -91,6 +91,8 @@ if pedestrian_bp.has_attribute('can_use_wheelchair'):
     pedestrian = world.spawn_actor(pedestrian_bp, spawn_point)
 ```
 
+完整可运行的代码为 [wheelchair.py](https://github.com/OpenHUTB/doc/blob/6caf91fcd2785272e3ab637fbba9dd196d7ec526/src/demo/wheelchair.py#L282) 。
+
 
 ## 成年人
 
