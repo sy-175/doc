@@ -12,6 +12,9 @@
 
     点击`Generate`。
 
+!!! 注意
+   如果点击`Configure`报没有Eigen的错误，则运行`chrono\contrib\build-scripts\windows\buildEigen.bat`进行Eigen安装。
+
 3. 使用VS2019双击打开`C:\Packages\chrono_build\Chrono.sln`。选择`Release`进行构建。
 
 
