@@ -80,6 +80,49 @@ cmake ../ -DCMAKE_PREFIX_PATH="C:\Packages\eProsima\Fast-DDS-2.14.5\thirdparty\a
 
 ## 问题
 
+* 编译完成后，运行`demo_PARSER_OpenSim`报错
+```text
+由于找不到 `Irrlicht.dll`，无法继续执行代码
+```
+解决：将`C:\Packages\irrlicht-1.8.5\bin\Win64-VisualStudio\Irrlicht.dll`拷贝到`D:\Build\chrono\bin\Release`目录下，再重新运行。
+
+* 编译 Debug 版本报错：
+```text
+无法打开文件“python311_d.lib”
+无法打开文件“..\..\..\lib\Debug\Chrono_parsers_d.lib”
+```
+
+原因：缺少`python311_d.lib`是因为使用的是python发布版，而不是debug版本。
+
+缺少`Chrono_parsers_d.lib`是因为需要编译 Chrono_parsers。
+
+C++中Debug模式下 #include <Python.h> 会提示链接错误信息 无法打开文件“python311_d.lib”
+
+解决：参考[链接](https://www.cnblogs.com/Jeffxu/p/17965842) ，在 [chrono/src/chrono_parsers
+/ChParserPython.cpp包含头文件时](https://github.com/OpenHUTB/chrono/blob/hutb/src/chrono_parsers/ChParserPython.cpp) ，临时去掉 Debug 模式，待后面再恢复之前的模式，操作方式如下：
+
+```cpp
+#ifdef _DEBUG
+#undef _DEBUG
+#include <Python.h>
+#define _DEBUG
+#else
+#include <Python.h>
+#endif
+```
+
+
+
+* 编译错误：
+
+```text
+无法打开包括文件: “cuda_runtime.h”: No such file or directory
+无法打开输入文件“Chrono_modal.lib”
+无法打开输入文件“..\..\..\lib\Release\Chrono_parsers.lib”
+```
+
+解决：移除需要CUDA的sensor模块的编译。
+
 * 运行`chrono\contrib\build-scripts\windows\buildVSG.bat`出现Vulkan找不到的错误：
 
 ```text

@@ -51,10 +51,11 @@ for i in range(200):
 
 ## Chrono OpenSim 解析器
 
-* [Windows下Chrono源代码编译](../chrono/build_in_windows.md)
+详细信息请参考 [基于 Chrono 的肌肉骨骼解析和控制](https://openhutb.github.io/locomotion/) 。
 
-* [Carla中Chrono的实现分析](../chrono/chrono_in_carla.md)
+* [Windows下Chrono源代码编译](../chrono/build_in_windows.md)
 * [Chrono OpenSim 解析器](../chrono/OpenSim_parser.md)
+* [Carla中Chrono的实现分析](../chrono/chrono_in_carla.md)
 * [Chrono 添加可视化组件 irrlicht](../chrono/irrlicht_support.md)
 
 

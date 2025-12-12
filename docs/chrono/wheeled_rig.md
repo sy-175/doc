@@ -30,7 +30,7 @@
 ![](../img/chrono/susp_test_rig_pushrod.png)
 
 ## 轮胎试验台
-[ChTireTestRig](https://api.projectchrono.org/classchrono_1_1vehicle_1_1_ch_tire_test_rig.html) 是一种用于测试单个轮胎与 [刚性](https://api.projectchrono.org/vehicle_terrain.html#vehicle_terrain_rigid) 、[SCM 可变形](https://api.projectchrono.org/vehicle_terrain.html#vehicle_terrain_scm) 或 [粒状地形](https://api.projectchrono.org/vehicle_terrain.html#vehicle_terrain_granular) 相互作用的装置。所有可用的 Chrono::Vehicle [轮胎模型](https://api.projectchrono.org/wheeled_tire.html) 都可以与此测试装置一起使用，但只能与一致的地形模型结合使用。
+[ChTireTestRig](https://api.projectchrono.org/classchrono_1_1vehicle_1_1_ch_tire_test_rig.html) 是一种用于测试单个轮胎与 [刚性](https://api.projectchrono.org/vehicle_terrain.html#vehicle_terrain_rigid) 、[可变形土壤接触模型 (Soil Contact Model, SCM](https://api.projectchrono.org/vehicle_terrain.html#vehicle_terrain_scm) 或 [粒状地形](https://api.projectchrono.org/vehicle_terrain.html#vehicle_terrain_granular) 相互作用的装置。所有可用的 Chrono::Vehicle [轮胎模型](https://api.projectchrono.org/wheeled_tire.html) 都可以与此测试装置一起使用，但只能与一致的地形模型结合使用。
 
 轮胎试验台允许纵向速度、车轮角速度和车轮滑移角随时间变化，支持纵向速度和角速度的自动选择，以强制执行指定的纵向滑移值，并允许指定外倾角（在模拟期间保持不变）。
 
