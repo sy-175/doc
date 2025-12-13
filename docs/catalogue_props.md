@@ -129,6 +129,11 @@
 	* [__邮箱__](#mailbox)
 	* [__街头喷泉__](#street-fountain)
 	* [__售货机__](#vending-machine)
+## __植被__
+* __树__
+	* [__银柴__](#aporosa-tree)
+	* [__椰子树__](#coconut-palm)
+	* [__柏树__](#cypress-tree)
 ## __公用__
 * __校准__
 	* [__校准器__](#calibrator)
@@ -844,6 +849,30 @@
 
 
 * __蓝图 ID__: <span style="color:#00a6ed;">static.prop.vendingmachine<span>
+
+---
+
+## __植被__
+### 银柴
+
+![static_prop_Aporosa](img/catalogue/props/static_prop_aporosa.webp)
+
+
+* __Blueprint ID__: <span style="color:#00a6ed;">static.prop.aporosatree<span>  
+
+### 椰子树
+
+![static_prop_CoconutPalm](img/catalogue/props/static_prop_coconut_palm.webp)
+
+
+* __Blueprint ID__: <span style="color:#00a6ed;">static.prop.coconutpalm<span>  
+
+### 柏树
+
+![static_prop_CypressTree](img/catalogue/props/static_prop_cypress_tree.webp)
+
+
+* __Blueprint ID__: <span style="color:#00a6ed;">static.prop.cypresstree<span>  
 
 ---
 

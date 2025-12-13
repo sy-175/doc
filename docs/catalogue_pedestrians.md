@@ -81,8 +81,9 @@
 * [__警察 - 2__](#police_2)
 ---
 
-## 轮椅使用者
-轮椅模型与大多数行人模型兼容。您可以使用行人蓝图的 has_attribute 方法测试所选行人是否具有 can_use_wheelchair 属性，从而确定其是否与轮椅模型兼容。然后将 use_wheelchair 属性设置为 True：
+## 轮椅使用者（弱勢道路使用者，Vulnerable Road User, VRU）
+
+轮椅模型与大多数行人模型兼容。您可以使用行人蓝图的 `has_attribute` 方法测试所选行人是否具有 `can_use_wheelchair` 属性，从而确定其是否与轮椅模型兼容。然后将 `use_wheelchair` 属性设置为 True：
 
 ```python
 pedestrian_bp = bp_lib.find('walker.pedestrian.0028')
@@ -90,6 +91,8 @@ if pedestrian_bp.has_attribute('can_use_wheelchair'):
     pedestrian_bp.set_attribute('use_wheelchair', 'True')
     pedestrian = world.spawn_actor(pedestrian_bp, spawn_point)
 ```
+
+![wheelchair_pedestrians](img/catalogue/pedestrians/vru_pedestrians.webp)
 
 完整可运行的代码为 [wheelchair.py](https://github.com/OpenHUTB/doc/blob/6caf91fcd2785272e3ab637fbba9dd196d7ec526/src/demo/wheelchair.py#L282) 。
 
