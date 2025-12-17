@@ -7,8 +7,8 @@ title: 主页
 
 * [__简介__](#primary)  
     * [入门](#introduction)
-    * [车辆](#vehicle)  
-    * [行人](#pedestrian)  
+    * [行人](#pedestrian) 
+    * [车辆](#vehicle)
 * [__模拟__](#simulator)
     * [概念](#concept)
     * [模块](#modules) 
@@ -32,11 +32,11 @@ title: 主页
 
 1. 下载 [链接](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 中的`software/hutb/hutb_car_vr_air_mujoco.zip`并解压运行`WindowsNoEditor`文件夹下的`CarlaUE4.exe`启动场景，按`W`、`S`、`A`、`D` 进行场景浏览；
 
-3. 使用`pip install hutb` 安装 Python 功能包（或者使用 pip 安装特定版本的`PythonAPI/carla/dist/hutb-*.whl`），然后运行`PythonAPI/examples`中的脚本：
-   * [manual_control.py](https://github.com/OpenHUTB/doc/blob/master/src/examples/manual_control.py) 生成一辆键盘控制的车，`manual_control.py  --filter walker.pedestrian.*`生成键盘控制的人
-   * [generate_traffic.py](https://github.com/OpenHUTB/doc/blob/master/src/examples/generate_traffic.py) 生成人车流
-   * 切换到 [VR 模式](interbehavior.md) ：[config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) --map Town10HD?GAME=VR ；切换到[无人机模式](https://openhutb.github.io/air_doc/) ：`config.py --map Town10HD?GAME=AIR`
-   * 如果运行报错，请参考 [解决方法](faq/use_faq.md)。
+2. 使用`pip install hutb` 安装 Python 功能包（或者使用 pip 安装特定版本的`PythonAPI/carla/dist/hutb-*.whl`），然后运行`PythonAPI/examples`中的脚本（如果运行报错，请参考 [解决方法](faq/use_faq.md)）：
+
+     * 运行 [manual_control.py](https://github.com/OpenHUTB/doc/blob/master/src/examples/manual_control.py) 生成一辆键盘控制的车，运行 `manual_control.py  --filter walker.pedestrian.*` 生成键盘控制的人
+     * 运行 [generate_traffic.py](https://github.com/OpenHUTB/doc/blob/master/src/examples/generate_traffic.py) 生成人车流
+     * 切换到 [VR 模式](interbehavior.md) ：[config.py](https://github.com/OpenHUTB/hutb/blob/hutb/PythonAPI/util/config.py) --map Town10HD?GAME=VR ；切换到[无人机模式](https://openhutb.github.io/air_doc/) ：`config.py --map Town10HD?GAME=AIR`
 
 
 
@@ -75,6 +75,31 @@ title: 主页
 [__使用常见问题__](faq/use_faq.md) — 解决最常见的使用问题
 
 
+### 人 <span id="pedestrian"></span>
+<!-- 行人代理 -->
+
+[__行为交互__](interbehavior.md) — 基于 DReyeVR 的针对行为和交互研究的虚拟现实驾驶仿真模块
+
+[__行人导航__](tuto_G_pedestrian_navigation.md) — 使用骨骼为行人设置动画
+
+[__控制行人骨架__](tuto_G_control_walker_skeletons.md) — 使用骨骼为行人设置动画
+
+[__行人视觉__](tuto_G_pedestrian_visual.md) — 使用相机进行人眼的模拟
+
+[__自行车__](pedestrian/cycle.md) - 可提供最高程度的游戏内控制和反馈的自行车模拟器
+
+[__生成行人导航__](tuto_M_generate_pedestrian_navigation.md) — 获取行人四处走动所需的信息
+
+[__行人建模__](tuto_content_authoring_pedestrians.md) — 在三维建模软件中对人进行建模
+
+[__具身人模拟示例__](./pedestrian/humanoid.md) - 提供具身人 Mujoco、肌肉骨骼[OpenSim](pedestrian/OpenSim.md) 的仿真环境相关示例
+
+[__Mujoco插件__](https://github.com/OpenHUTB/mujoco_plugin) - 提供 Mujoco和 HUTB 模拟器之间的协同仿真
+
+[__行人物理场模拟__](pedestrian/tuto_content_chrono_opensim.md) — Chrono OpenSim 解析器
+
+
+
 ### 车 <span id="vehicle"></span>
 <!-- 车辆代理：单个 -> 多个 -->
 
@@ -99,29 +124,6 @@ title: 主页
 [__Chrono 集成__](tuto_G_chrono.md) — 整合 Chrono 来进行物理模拟
 
 
-
-### 人 <span id="pedestrian"></span>
-<!-- 行人代理 -->
-
-[__行为交互__](interbehavior.md) — 基于 DReyeVR 的针对行为和交互研究的虚拟现实驾驶仿真模块
-
-[__行人导航__](tuto_G_pedestrian_navigation.md) — 使用骨骼为行人设置动画
-
-[__控制行人骨架__](tuto_G_control_walker_skeletons.md) — 使用骨骼为行人设置动画
-
-[__行人视觉__](tuto_G_pedestrian_visual.md) — 使用相机进行人眼的模拟
-
-[__自行车__](pedestrian/cycle.md) - 可提供最高程度的游戏内控制和反馈的自行车模拟器
-
-[__生成行人导航__](tuto_M_generate_pedestrian_navigation.md) — 获取行人四处走动所需的信息
-
-[__行人建模__](tuto_content_authoring_pedestrians.md) — 在三维建模软件中对人进行建模
-
-[__具身人模拟示例__](./pedestrian/humanoid.md) - 提供具身人 Mujoco、肌肉骨骼[OpenSim](pedestrian/OpenSim.md) 的仿真环境相关示例
-
-[__Mujoco插件__](https://github.com/OpenHUTB/mujoco_plugin) - 提供 Mujoco和 HUTB 模拟器之间的协同仿真
-
-[__行人物理场模拟__](pedestrian/tuto_content_chrono_opensim.md) — Chrono OpenSim 解析器
 
 
 ---
