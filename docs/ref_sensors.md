@@ -9,13 +9,14 @@
 - [__障碍物检测器__](#obstacle-detector)
 - [__雷达传感器__](#radar-sensor)
 - [__RGB相机__](#rgb-camera)
+- [__广角相机__](#wide-angle-cameras)
+- [__鱼眼相机__](#fisheye-camera)
 - [__责任敏感安全传感器__](#rss-sensor)
 - [__语义激光雷达传感器__](#semantic-lidar-sensor)
 - [__语义分割相机__](#semantic-segmentation-camera)
 - [__实例分割相机__](#instance-segmentation-camera)
 - [__动态视觉传感器相机__](#dvs-camera)
 - [__光流相机__](#optical-flow-camera)
-- [__鱼眼相机__](#fisheye-camera)
 - [__V2X 传感器__](#v2x-sensor)
     - [协同感知](#cooperative-awareness-message)
     - [自定义消息](#custom-v2x-message)
@@ -500,6 +501,96 @@ points = np.reshape(points, (len(radar_data), 4))
 | `raw_data`         | bytes | BGRA 32 位像素阵列。                                                                              |
 
 
+---
+
+## 广角相机
+
+* __RGB 蓝图:__ sensor.camera.rgb.wide_angle_lens
+* __深度蓝图:__ sensor.camera.depth.wide_angle_lens
+* __语义分割蓝图:__ sensor.camera.semantic_segmentation.wide_angle_lens
+* __实例分割蓝图:__ sensor.camera.instance_segmentation.wide_angle_lens
+* __输出：__ 每步 [carla.Image](python_api.md#carla.Image) (除非 `sensor_tick` 另有说明).
+
+广角相机模型涵盖多种专用相机，例如标准广角相机、360度相机和鱼眼镜头。该模型提供标准 RGB 输出，并支持深度、语义分割和实例分割。此外，还提供多种投影模型，包括透视投影、立体投影、等距投影、等积投影、正交投影和 Kannala-Brandt 投影。
+
+所使用的 [Kannala-Brandt](https://www.researchgate.net/publication/6899685_A_Generic_Camera_Model_and_Calibration_Method_for_Conventional_Wide-Angle_and_Fish-Eye_Lenses) 模型与 [OpenCV中使用的实现](https://docs.opencv.org/3.4/db/d58/group__calib3d__fisheye.html) 相匹配。
+
+| 蓝图属性 | 类型 | 默认     | 默认                                                                                                                  |
+|-------------------------|--------|---------------|---------------------------------------------------------------------------------------------------------------------|
+| `camera_model`          | str    | `perspective` | 选项: <br>`perspective`,<br>`stereographic`,<br>`equidistant`,<br>`equisolid`,<br>`orthographic`,<br>`kannala-brandt` |
+| `fov`                   | float  | 90\.0         | 水平视场角（度）                                                                                                            |
+| `image_size_x`          | int    | 800           | 图片宽度（以像素为单位）                                                                                                        |
+| `image_size_y`          | int    | 600           | 图片高度（以像素为单位）                                                                                                        |
+| `k0`                    | float  | 0.0831        | Kannala-Brandt K0 参数                                                                                                |
+| `k1`                    | float  | 0.0111        | Kannala-Brandt K1 参数                                                                                                |
+| `k2`                    | float  | 0.00858       | Kannala-Brandt K2 参数                                                                                                |
+| `k3`                    | float  | 0.000854      | Kannala-Brandt K3 参数                                                                                                |
+| `sensor_tick`           | float  | 0\.0          | 传感器捕获之间的模拟秒数（节拍数）。                                                                                                  |
+| `fov_mask`              | bool   | false         | 掩膜视野范围外的像素                                                                                                          |
+| `fov_fade_size`         | float  | 0.0           | `fov_mask` 边缘的模糊程度                                                                                                  |
+| `perspective`           | bool   | false         | 启用透视模式                                                                                                              |
+| `equirectangular`       | bool   | false         | 启用等距柱状投影。                                                                                                           |
+| `longitude_offset`      | float  | 0.0           | 将等距柱状投影模型的视角中心移动一定角度                                      |
+
+#### 输出属性
+
+| 传感器数据属性 | 类型                                            | 描述                                                                                                            |
+|------------------------------|---------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| `frame`                      | int                                               | 测量发生时的帧号                                                                                                      |
+| `timestamp`                  | double                                            | 自轮次开始以来，测量模拟时间（以秒为单位）。                                                                                        |
+| `transform`                  | [carla.Transform](<../python_api#carlatransform>) | 测量时传感器在世界坐标系中的位置和旋转。 |
+| `width`                      | int                                               | 图片宽度（以像素为单位）                                                                                        |
+| `height`                     | int                                               | 图片高度（以像素为单位）                                                                                       |
+| `fov`                        | float                                             | 水平视场角（度）                                                                          |
+| `raw_data`                   | bytes                                             | BGRA 32 位像素阵列                                                                                  |
+
+具体效果请参考 [广角相机模拟效果及代码分析](https://mp.weixin.qq.com/s/GsEzR-R0xvIyUzSor6j6XQ) 。
+
+---
+
+## [鱼眼相机](https://github.com/carla-simulator/carla/pull/3755/files) <span id="fisheye-camera"></span>
+
+[鱼眼相机镜头](https://zhuanlan.zhihu.com/p/340751380) 是由十几个不同的透镜组合而成，在成像的过程中，入射光线经过不同程度的折射，投影到尺寸有限的成像平面上，使得鱼眼镜头拥有更大的视野范围。
+与针孔相机原理不同，鱼眼镜头采用非相似成像，在成像过程中引入畸变，通过对直径空间的压缩，突破成像视角的局限，从而达到广角成像。
+所以鱼眼镜头是一种极端的广角镜头，通常焦距小于等于16mm并且视角接近或等于180°（在工程上视角超过140°的镜头即统称为鱼眼镜头）。进入 [网盘](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 的目录 `software/car/fisheye-camera` 下载包含鱼眼相机的可执行场景，其实现步骤和原理参考 [链接](./sensor/fisheye_camera.md) 。
+
+* __蓝图：__ sensor.camera.fisheye
+* __输出：__ 每一步一个 [carla.ImageCube](python_api.md#carla.ImageCube) (除非`sensor_tick`另有说明)。
+
+
+Fisheye 相机充当常规鱼眼相机，从场景中捕捉图像。
+[carla.colorConverter](python_api.md#carla.ColorConverter) 定义可用于 carla.ImageCube 的转换模式的类，以显示 [carla.Sensor](python_api.md#carla.Sensor) 提供的信息。
+
+这里的 `sensor_tick` 表示我们希望传感器以多快的速度捕获数据。值为 1.5 表示我们希望传感器每 1.5 秒捕获一次数据。默认情况下，值为 0.0 表示尽可能快。
+
+![FisheyeImage](./img/sensor/ref_sensors_fisheye.png)
+
+#### 基本相机属性
+
+| 蓝图属性  | 类型     | 默认      | 描述          |
+| ----------------------------------------------------- | ----------------------------------------------------- |---------| ----------------------------------------------------- |
+| `max_angle`    | float    | 200\.0  | 最大角度（以度为单位）。   |
+| `x_size`       | float      | 1000\.0 | 图像宽度（以像素为单位）。           |
+| `y_size`       | float      | 900\.0  | 图像高度（以像素为单位）。          |
+
+
+
+#### 相机镜头畸变属性
+
+| 蓝图属性      | 类型         | 默认      | 描述                      |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |-------------------------|
+| `f_x`    | float    | 300\.0   | 焦距的 x 长度（以像素为单位）。       |
+| `f_y`    | float    | 300\.0   | 焦距在的 y 长度（以像素为单位）。      |
+| `c_x`    | float    | 600\.0   | 光学中心的 x 坐标（主点），以像素为单位。  |
+| `c_y`    | float    | 400\.0   | 光学中心的 y 坐标（主点），以像素为单位。  |
+| `d_1`    | float    | 0\.0   | 畸变系数。                   |
+| `d_2`    | float    | 0\.0   | 畸变系数。 |
+| `d_3`    | float    | 0\.0   | 畸变系数。 |
+| `d_4`    | float    | 0\.0   | 畸变系数。 |
+
+
+
+<br>
 
 ---
 ## 责任敏感安全传感器 <span id="rss-sensor"></span>
@@ -936,51 +1027,7 @@ $$
 <br>
 
 
----
 
-## [鱼眼相机](https://github.com/carla-simulator/carla/pull/3755/files) <span id="fisheye-camera"></span>
-
-[鱼眼相机镜头](https://zhuanlan.zhihu.com/p/340751380) 是由十几个不同的透镜组合而成，在成像的过程中，入射光线经过不同程度的折射，投影到尺寸有限的成像平面上，使得鱼眼镜头拥有更大的视野范围。
-与针孔相机原理不同，鱼眼镜头采用非相似成像，在成像过程中引入畸变，通过对直径空间的压缩，突破成像视角的局限，从而达到广角成像。
-所以鱼眼镜头是一种极端的广角镜头，通常焦距小于等于16mm并且视角接近或等于180°（在工程上视角超过140°的镜头即统称为鱼眼镜头）。进入 [网盘](https://pan.baidu.com/s/1n2fJvWff4pbtMe97GOqtvQ?pwd=hutb) 的目录 `software/car/fisheye-camera` 下载包含鱼眼相机的可执行场景，其实现步骤和原理参考 [链接](./sensor/fisheye_camera.md) 。
-
-* __蓝图：__ sensor.camera.fisheye
-* __输出：__ 每一步一个 [carla.ImageCube](python_api.md#carla.ImageCube) (除非`sensor_tick`另有说明)。
-
-
-Fisheye 相机充当常规鱼眼相机，从场景中捕捉图像。
-[carla.colorConverter](python_api.md#carla.ColorConverter) 定义可用于 carla.ImageCube 的转换模式的类，以显示 [carla.Sensor](python_api.md#carla.Sensor) 提供的信息。
-
-这里的 `sensor_tick` 表示我们希望传感器以多快的速度捕获数据。值为 1.5 表示我们希望传感器每 1.5 秒捕获一次数据。默认情况下，值为 0.0 表示尽可能快。
-
-![FisheyeImage](./img/sensor/ref_sensors_fisheye.png)
-
-#### 基本相机属性
-
-| 蓝图属性  | 类型     | 默认      | 描述          |
-| ----------------------------------------------------- | ----------------------------------------------------- |---------| ----------------------------------------------------- |
-| `max_angle`    | float    | 200\.0  | 最大角度（以度为单位）。   |
-| `x_size`       | float      | 1000\.0 | 图像宽度（以像素为单位）。           |
-| `y_size`       | float      | 900\.0  | 图像高度（以像素为单位）。          |
-
-
-
-#### 相机镜头畸变属性
-
-| 蓝图属性      | 类型         | 默认      | 描述                      |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |-------------------------|
-| `f_x`    | float    | 300\.0   | 焦距的 x 长度（以像素为单位）。       |
-| `f_y`    | float    | 300\.0   | 焦距在的 y 长度（以像素为单位）。      |
-| `c_x`    | float    | 600\.0   | 光学中心的 x 坐标（主点），以像素为单位。  |
-| `c_y`    | float    | 400\.0   | 光学中心的 y 坐标（主点），以像素为单位。  |
-| `d_1`    | float    | 0\.0   | 畸变系数。                   |
-| `d_2`    | float    | 0\.0   | 畸变系数。 |
-| `d_3`    | float    | 0\.0   | 畸变系数。 |
-| `d_4`    | float    | 0\.0   | 畸变系数。 |
-
-
-
-<br>
 
 ---
 

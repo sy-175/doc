@@ -44,6 +44,15 @@ blueprint.set_attribute('sensor_tick', '1.0')
 
 ### 生成 <span id="spawning"></span>
 
+传感器可以放置在地图上的任何位置。通常情况下，它们会附加到父级 Actor（例如车辆）上，以便在模拟环境中移动，就像物理安装在车辆上的传感器一样。`spawn_actor()` 方法需要一个从蓝图库中选择的传感器蓝图和一个变换参数。对于未附加的传感器，变换参数将定义其在 CARLA 世界中的绝对位置。`attach_to` 参数定义了要将传感器附加到的 Actor。对于附加到 Actor 的传感器，变换参数定义了其在 Actor 坐标系中相对于 Actor 的相对位置。
+
+
+```py
+my_vehicle = world.spawn_actor(vehicle_blueprint, spawn_point)
+transform = carla.Transform(carla.Location(x=0.8, z=1.7))
+sensor = world.spawn_actor(sensor_blueprint, transform, attach_to=my_vehicle)
+```
+
 `attachment_to` 和 `attachment_type` 至关重要。传感器应连接到父参与者（通常是车辆）上，以跟踪它并收集信息。附件类型将确定其关于所述车辆的位置如何更新。
 
 * __刚性附件(Rigid attachment)。__ 动对于其父位置是严格的。这是从模拟中检索数据的合适附件。
@@ -51,9 +60,10 @@ blueprint.set_attribute('sensor_tick', '1.0')
 * __弹簧臂幽灵附件(SpringArmGhost attachment)。__ 与前一个类似，但没有进行碰撞测试，因此相机或传感器可以穿过墙壁或其他几何形状。
 
 ```py
-transform = carla.Transform(carla.Location(x=0.8, z=1.7))
-sensor = world.spawn_actor(blueprint, transform, attach_to=my_vehicle)
+sensor = world.spawn_actor(sensor_blueprint, transform, attach_to=my_vehicle, attachment_type=carla.AttachmentType.SpringArm)
 ```
+
+
 !!! 重要
     当带有附件生成时，位置必须相对于父参与者。
 
@@ -107,14 +117,15 @@ sensor02.listen(callback)
 * 每个模拟步骤 __获取数据__ 。  
 
 
-|传感器 |输出 | 概述       |
-| ----------------- | ---------- | ------------------ |
-| 深度 | [carla.Image](<../python_api#carlaimage>)  |在灰度图中渲染视野中元素的深度。          |
-| RGB      | [carla.Image](<../python_api#carlaimage>)   | 提供清晰的周围环境视野。看起来就像一张正常的现场照片。   |
-| 光流    | [carla.Image](<../python_api#carlaimage>)  | 渲染相机中每个像素的运动。  |
-| 语义分割    | [carla.Image](<../python_api#carlaimage>)  | 根据元素的标签以特定颜色渲染视野中的元素。 |
-| 实例分割    | [carla.Image](<../python_api#carlaimage>)  | 根据元素的标签和唯一的对象 ID 以特定颜色渲染视野中的元素。 |
-| DVS    | [carla.DVSEventArray](<../python_api#carladvseventarray>)  | 作为事件流异步测量亮度强度的变化。  |
+| 传感器                                           |输出 | 概述                                                                                                                  |
+|-----------------------------------------------| ---------- |---------------------------------------------------------------------------------------------------------------------|
+| RGB                                           | [carla.Image](<../python_api#carlaimage>)   | 提供清晰的周围环境视野。看起来就像一张正常的现场照片。                                                                                         |
+| 深度                                            | [carla.Image](<../python_api#carlaimage>)  | 在灰度图中渲染视野中元素的深度。                                                                                                    |
+| [广角](ref_sensors.md#wide-angle-cameras) | [carla.Image](<../python_api#carlaimage>)   | 可选的相机模型包括广角相机、鱼眼镜头和 360 度相机。 |
+| 光流                                            | [carla.Image](<../python_api#carlaimage>)  | 渲染相机中每个像素的运动。                                                                                                       |
+| 语义分割                                          | [carla.Image](<../python_api#carlaimage>)  | 根据元素的标签以特定颜色渲染视野中的元素。                                                                                               |
+| 实例分割                                          | [carla.Image](<../python_api#carlaimage>)  | 根据元素的标签和唯一的对象 ID 以特定颜色渲染视野中的元素。                                                                                     |
+| DVS                                           | [carla.DVSEventArray](<../python_api#carladvseventarray>)  | 作为事件流异步测量亮度强度的变化。                                                                                                   |
 
 <br>
 
