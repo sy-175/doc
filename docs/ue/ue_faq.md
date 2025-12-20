@@ -222,6 +222,12 @@ LIN110 无法打开文件“D:\work\workspace\UnrealEngine\Engine\Binaries\Win64
   c1xx: note: 系统返回代码 1455: The paging file is too small for this operation to complete.
 ```
 
+###### 打包时候报错：
+```text
+Package ../../../../../Unreal/CarlaUE4/Content/Carla/Content/Matrials/HutbCity/BeiMen/Default_Material.uasset has malformed tag
+```
+检查是否没有拉取大文件。
+
 ## 源代码管理  <span id="src_management"></span>
 
 ###### [从原来的仓库迁移到OpenHUTB的引擎仓库](https://www.cnblogs.com/gjmhome/p/14061090.html)
@@ -249,10 +255,13 @@ git reset --hard origin/hutb
 
 .dmp 文件分析要求本机中有崩溃发生版本对应的符号表文件（CarlaUE4.pdb 文件），使用 VS 2022 （VS 2019 的步骤类似）分析 .dmp 文件步骤如下：
 
-```
+```shell
+# CarlaUE4.exe崩溃后的日志目录
 C:\Users\Administrator\AppData\Local\CarlaUE4\Saved\Crashes
+# 启动引擎编辑器时崩溃的日志目录
+hutb\Unreal\CarlaUE4\Saved\Crashes\UE4CC-Windows-{ID}\CarlaUE4.log
 ```
-附：崩溃日志的保存目录和项目名有关：C:\Users[Your Windows Username]\AppData\Local[Project Name]\Saved\Crashes
+附：崩溃日志的保存目录和项目名有关：`C:\Users\{Your Windows Username}\AppData\Local{Project Name}\Saved\Crashes\`
 
 ###### 引擎 MiniDump 崩溃现场的恢复
 
