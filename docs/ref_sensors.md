@@ -511,7 +511,7 @@ points = np.reshape(points, (len(radar_data), 4))
 * __实例分割蓝图:__ sensor.camera.instance_segmentation.wide_angle_lens
 * __输出：__ 每步 [carla.Image](python_api.md#carla.Image) (除非 `sensor_tick` 另有说明).
 
-广角相机模型涵盖多种专用相机，例如标准广角相机、360度相机和鱼眼镜头。该模型提供标准 RGB 输出，并支持深度、语义分割和实例分割。此外，还提供多种投影模型，包括透视投影、立体投影、等距投影、等积投影、正交投影和 Kannala-Brandt 投影。
+广角相机模型涵盖多种专用相机，例如标准广角相机、360度相机和鱼眼镜头。该模型提供标准 RGB 输出，并支持深度、语义分割和实例分割。此外，还提供多种投影模型，包括透视投影、立体投影、等距投影、等积投影、正交投影和 Kannala-Brandt 投影。实现原理请参考 [广角相机代码分析](./sensor/wide_angle.md) 。
 
 所使用的 [Kannala-Brandt](https://www.researchgate.net/publication/6899685_A_Generic_Camera_Model_and_Calibration_Method_for_Conventional_Wide-Angle_and_Fish-Eye_Lenses) 模型与 [OpenCV中使用的实现](https://docs.opencv.org/3.4/db/d58/group__calib3d__fisheye.html) 相匹配。
 

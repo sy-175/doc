@@ -122,6 +122,9 @@ if (!ActorPowerList.empty())
 }
 ```
 
+存在的问题：[接缝伪影](https://mp.weixin.qq.com/s/7wIy_YA-gTdNNeITX_bK-g) 的问题。
+
+
 ## 参考
 
 * [A generic camera model and calibration method for conventional, wide-angle, and fish-eye lenses](https://users.aalto.fi/~kannalj1/publications/tpami2006.pdf)
