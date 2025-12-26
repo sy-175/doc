@@ -234,6 +234,9 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 ## Windows 构建
 <!-- ======================================================================= -->
 
+###### 编译 recast 时候报错：Could NOT find SDL2 (missing: SDL2_LIBRARY SDL2_INCLUDE_DIR
+  SDL2_SDLMAIN_LIBRARY)
+> [解决](https://github.com/carla-simulator/carla/issues/6854#issuecomment-1925019522) ：将 [SDL2-devel-2.30.0-VC.zip](https://github.com/libsdl-org/SDL/releases/download/release-2.30.0/SDL2-devel-2.30.0-VC.zip) 下载并解压到“D:\carla\Build\recast-src\RecastDemo\Contrib”目录下，然后将解压后的文件夹重命名为“SDL”
 
 ###### CICD 到 make package 时候出现链接 boost 的错误
 
