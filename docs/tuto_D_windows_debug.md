@@ -109,9 +109,14 @@ auto world = client.LoadWorld("Town10HD_Opt");
 
 
 
-## 调试LibCarla <span id="debug_LibCarla"></span>
+## 调试 LibCarla <span id="debug_LibCarla"></span>
+
+### 使用 C++ 进行调用
+
 该功能已经在 [C++客户端调试](#cpp_client_debug) 中实现，故不再需要，后面的步骤仅做探索使用。**客户端**向服务端调用实现的功能。
+
 * 脚本`BuildLibCarla.bat`调用`cmake`命令进行构建：
+
 ```shell
 cmake -G %GENERATOR% %PLATFORM%^
   -DCMAKE_BUILD_TYPE=Server^
@@ -152,6 +157,44 @@ cmake --build . --config Release --target install | findstr /V "Up-to-date:"
 参考 [vs调试C++](https://blog.csdn.net/qq_36330274/article/details/128380765) 。
 
 调试`carla_client`时，vs报错：`boost::python::error_already_set`，尝试[捕获具体异常](https://leonlee.wordpress.com/2018/09/24/%E4%BD%BF%E7%94%A8boostpython%E5%9C%A8c%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%B5%8C%E5%85%A5python%EF%BC%9A%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/) 。
+
+
+### 从 CarlaUE4 启动调试 LibCarla Server
+
+需要在 CarlaUE4 项目的菜单栏中选择 **解决方案配置** `Debug Editor`，然后点击`调试->启动调试`打开编辑器，然后启动场景，可以进入 LibCarla Server 代码。
+
+#### 其他尝试性配置
+
+使用 VS 打开工程`hutb\Unreal\CarlaUE4\CarlaUE4.sln`，点击`调试->开始执行(不调试)`运行 CarlaUE4 来启动编辑器
+
+!!! 注意
+    如果以调式模式运行会导致 LibCarla 模块附着到编辑器时报错：`无法附着到进程。已附加了一个调试器`。
+
+打开 LibCarla 工程`hutb\Build\libcarla-visualstudio\CARLA.sln`
+
+调式信息位于：`hutb\Build\libcarla-visualstudio\LibCarla\cmake\client\Debug\`
+
+
+
+可执行模块（exe或dll）--> pdb文件 --> 源代码。
+
+[根据pdb中的源文件路径查找源文件](https://blog.csdn.net/weixin_34384915/article/details/93961167) 。如果源文件在路径中不存在，则在中的“Browse to find source”可以使用，点击后会弹出文件打开对话框。
+
+如果能加载正确的pdb文件了，却不能自动关联对正确的源文件。这时候就可以看看pdb文件中对应的源文件信息是否正确。
+查看pdb文件的工具，我们可以使用vs安装目录下的`C:\Program Files\Microsoft Visual Studio\2022\Community\DIA SDK\Samples\DIA2Dump`中的DIA2Dump工具。这个有源代码，需要打开`DIA2Dump.sln`重新编译就可以使用了。
+
+[编译DiaDump](https://learn.microsoft.com/en-us/visualstudio/debugger/debug-interface-access/dia2dump-sample?view=visualstudio) ：To build the Dia2Dump sample in Visual Studio
+
+运行DiaDump解析pdf文件：
+```shell
+C:\Program Files\Microsoft Visual Studio\2022\Community\DIA SDK\Samples\DIA2Dump\x64\Debug>Dia2Dump.exe D:\hutb\Unreal\CarlaUE4\Plugins\Carla\Binaries\Win64\UE4Editor-Carla.pdb >> D:\hutb\Unreal\CarlaUE4\Plugins\Carla\Binaries\Win64\UE4Editor-Carla.log
+```
+Compiland就是编译的单元，我们可以看到全路径信息。然后到对应的路径下查看是否源代码文件是否存在。
+
+以上方法不能调试进入LibCarla模块的代码。
+
+
+
 
 ### Python 扩展模块 <span id="python_extension"></span>
 LibCarla编译后生成`Python37/Lib/site-packages/carla/libcarla.cp37-win_amd64.pyd`给Python进行调用。为了提高运行速度，将当前目录中的`__init__.py`和`command.py`编译为`__pycache__`目录中的 `byte code(字节码)`。
