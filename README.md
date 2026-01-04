@@ -161,6 +161,17 @@ $$
 文档页面显示支持 [Latex 公式](https://gist.github.com/josemazo/36af7bb9c58b92c684bbd431f6c68ce9) 、[视频播放](https://pypi.org/project/mkdocs-video/)  。
 
 
+### 其他
+
+* mkdocs 定制
+
+    修改完 [mkdocs](https://github.com/OpenHUTB/mkdocs) 仓库后，使用以下命令进行安装：
+    ```shell
+    pip uninstall mkdocs -y
+    cd mkdocs
+    python -m pip install .
+    ```
+
 
 ## 常见问题
 * 编译文档时报错：`ERROR - Config value: ‘plugins‘. Error: The “redirects“ plugin is not installed`
