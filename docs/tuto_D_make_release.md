@@ -151,23 +151,34 @@ cd mkdocs
 pip install 'build<0.10.0'
 python -m build
 twine upload dist/*
+# 用户名为`__token__`，密码为token。
 ```
-上传报错：
-```text
-requests.exceptions.ProxyError: HTTPSConnectionPool(host='upload.pypi.org', port=443): Max retries exceeded with url: /legacy/ (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
-```
-关闭系统代理即可解决。
+* 上传提示代理报错：
+   ```text
+   requests.exceptions.ProxyError: HTTPSConnectionPool(host='upload.pypi.org', port=443): Max retries exceeded with url: /legacy/ (Caused by ProxyError('Unable to connect to proxy', SSLError(SSLZeroReturnError(6, 'TLS/SSL connection has been closed (EOF) (_ssl.c:1149)'))))
+   ```
+   解决：关闭系统代理即可解决。
 
-用户名为`__token__`，密码为token。
 
-上传权限不够：
-```shell
-# 如果报错 requests.exceptions.ChunkedEncodingError: ('Connection broken: IncompleteRead(13780 bytes read, 8681 more expected)', IncompleteRead(13780 bytes read, 8681 more expected))
-# 注意版本号+1
-twine upload dist/* --repository-url https://pypi.org/project/hutb-doc/
-# 或者
-twine upload dist/* --repository-url https://pypi.org/manage/project/hutb-doc/releases/
-```
+
+* 上传，出现权限不够等错误注意 mkdocs 版本号+1，需要修改 [\_\_init__.py](https://github.com/OpenHUTB/mkdocs/blob/master/mkdocs/__init__.py) 。：
+   ```shell
+   # 如果报错 requests.exceptions.ChunkedEncodingError: ('Connection broken: IncompleteRead(13780 bytes read, 8681 more expected)', IncompleteRead(13780 bytes read, 8681 more expected))
+   twine upload dist/* --repository-url https://pypi.org/project/hutb-doc/
+   ```
+
+* 如果出现 twine 命令找不到的问题：`twine : The term 'twine' is not recognized as the name of a cmdlet, function, script file, or operable program.`
+
+   解决：pip 安装解决不了，可以使用本地twine.exe的绝对路径，比如：`C:\Users\Administrator\.conda\envs\ppt2pdf\Scripts\twine.exe upload dist/*`。
+
+   注意：使用 Python 3.7 上传时会报错：
+   ```text
+   ERROR    InvalidDistribution: Metadata is missing required fields: Name, Version.
+         Make sure the distribution includes the files where those fields are specified, and is using a supported
+         Metadata-Version: 1.0, 1.1, 1.2, 2.0, 2.1, 2.2.
+   ```
+  解决：需要使用高版本 Python，比如 Python 3.8.20。
+
 
 使用方法：
 ```shell

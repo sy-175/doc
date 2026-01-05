@@ -78,9 +78,14 @@ git clone https://github.com/OpenHUTB/mkdocs.git
 安装mkdocs包：
 ```shell
 cd mkdocs
-python -m pip install . -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
+# 可编辑（--editable）模式安装，本地修改 mkdocs 代码后，需要重启 mkdocs serve 才会生效
+python -m pip install -e .
+# 或者安装发布模式
+# python -m pip install . -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
 ```
 然后使用新的 mkdocs 执行步骤 1-3。
+
+注意：发布自定义 mkdocs 请参考 [链接](https://openhutb.github.io/doc/tuto_D_make_release/) 。
 
 
 ## 软件发布
