@@ -143,7 +143,8 @@ twine check dist/*
 
 ___
 
-* 其他：发布自定义mkdocs
+### 发布自定义mkdocs
+
 ```shell
 git clone https://github.com/OpenHUTB/mkdocs.git
 cd mkdocs
@@ -157,8 +158,14 @@ requests.exceptions.ProxyError: HTTPSConnectionPool(host='upload.pypi.org', port
 ```
 关闭系统代理即可解决。
 
+用户名为`__token__`，密码为token。
+
 上传权限不够：
 ```shell
+# 如果报错 requests.exceptions.ChunkedEncodingError: ('Connection broken: IncompleteRead(13780 bytes read, 8681 more expected)', IncompleteRead(13780 bytes read, 8681 more expected))
+# 注意版本号+1
+twine upload dist/* --repository-url https://pypi.org/project/hutb-doc/
+# 或者
 twine upload dist/* --repository-url https://pypi.org/manage/project/hutb-doc/releases/
 ```
 

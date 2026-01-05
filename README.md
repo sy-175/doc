@@ -165,12 +165,14 @@ $$
 
 * mkdocs 定制
 
-    修改完 [mkdocs](https://github.com/OpenHUTB/mkdocs) 仓库后，使用以下命令进行安装：
+    修改完 [mkdocs](https://github.com/OpenHUTB/mkdocs) 仓库后，使用以下命令进行**本地安装**：
     ```shell
     pip uninstall mkdocs -y
     cd mkdocs
     python -m pip install .
     ```
+    由于 **Github Action** 的 [OpenHUTB/actions-mkdocs](https://github.com/Tiryoh/actions-mkdocs/compare/main...OpenHUTB:actions-mkdocs:main) 需要使用 `pip install hutb-doc -i https://pypi.org/simple` 进行安装，所以需要先删除 [pypi 已发布的包](https://pypi.org/manage/project/hutb-doc/releases/) ，然后再参考 [发布自定义mkdocs](https://openhutb.github.io/doc/tuto_D_make_release/) 发布 hutb-doc。
+    
 
 
 ## 常见问题
