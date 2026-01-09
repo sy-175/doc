@@ -53,6 +53,9 @@ HUTB 论坛</a>
 ---
 
 ## 编译 OpenHUTB 分支
+
+
+
 ### make lanunch ARGS="--chrono"报错
 ```text
 D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/FisheyeSensor.cpp(219): error C2653: “CubemapHelpersFisheye”: 不是类或命名空间名称
@@ -233,6 +236,17 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 
 ## Windows 构建
 <!-- ======================================================================= -->
+
+
+###### 换个用户执行 git 命令时候报错：git config --global --add safe.directory "*"
+> ```shell
+> git config --global --add safe.directory "*"
+> ```
+
+
+###### pip 安装包时出现 ValueError: check_hostname requires server_hostname 错误
+
+> 关闭代理服务器。
 
 ###### 编译 recast 时候报错：Could NOT find SDL2 (missing: SDL2_LIBRARY SDL2_INCLUDE_DIR
   SDL2_SDLMAIN_LIBRARY)
