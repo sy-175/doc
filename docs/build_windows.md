@@ -458,7 +458,7 @@ if %errorlevel% neq 0 goto error_py
 ```
 
 
-## 报错 <span id="error"></span>
+## 报错排查 <span id="error"></span>
 
 当执行 make 相关命令报错时，可以顺着 bat 脚本的**构建流程**，在可能报错的地方加上 `echo` 语句输出所需查看变量的值是否正确，并加上 `pause` 命令暂停执行。
 

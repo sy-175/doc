@@ -238,6 +238,57 @@ D:/work/workspace/carla/Unreal/CarlaUE4/Plugins/Carla/Source/Carla/Sensor/Fishey
 <!-- ======================================================================= -->
 
 
+###### 下载 osm2odr 报错：Unknown error (0x80092012) - 吊销功能无法检查证书是否吊销
+
+```shell
+# 添加 --ssl-no-revoke 参数
+curl --retry 5 --retry-max-time --ssl-no-revoke 120 -L -o OSM2ODR.zip https://github.com/carla-simulator/sumo/archive/%CURRENT_OSM2ODR_COMMIT%.zip
+```
+
+
+###### make PythonAPI报错：“carla/Memory.h”: No such file or directory
+
+将LibCarla\source\carla中的version.h.in重命名为version.h，删除.in文件，然后再次运行make pythonAPI
+
+Version.h.in文件内容
+```cpp
+// Copyright (c) 2017 Computer Vision Center (CVC) at the Universitat Autonoma
+// de Barcelona (UAB).
+//
+// This work is licensed under the terms of the MIT license.
+// For a copy, see <https://opensource.org/licenses/MIT>.
+
+#pragma once
+
+namespace carla {
+
+  constexpr const char *version() {
+    return "5966bb718-dirty";
+  }
+
+} // namespace carla
+```
+
+Version.h文件内容
+```cpp
+// Copyright (c) 2017 Computer Vision Center (CVC) at the Universitat Autonoma
+// de Barcelona (UAB).
+//
+// This work is licensed under the terms of the MIT license.
+// For a copy, see <https://opensource.org/licenses/MIT>.
+
+#pragma once
+
+namespace carla {
+
+  constexpr const char *version() {
+    return "${CARLA_VERSION}";
+  }
+
+} // namespace carla
+```
+
+
 ###### 在新系统中使用VS2022打开CarlaUE4.sln，提示安装时已经不提供.NET Framework 5.0的目标框架了，打开VS也提示不支持目标框架
 
 > [解决方法](https://www.cnblogs.com/bdqczhl/p/18670152) ：手动加载下载.NET Framework 5.0 框架。
