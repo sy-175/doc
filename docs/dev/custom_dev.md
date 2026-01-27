@@ -17,6 +17,17 @@ git apply 【path/to/xxx.patch】
 如果有冲突则按行进行合并。
 
 
+## 合并某个提交
+
+```shell
+git checkout sync
+git log --oneline -3
+# 记下最左侧的提交{commit_id}
+git checkout hutb
+# 从sync分支摘取提交到hutb分支
+git cherry-pick {commit_id}
+```
+
 ## 冲突解决
 [open3d_lidar.py](../../../carla/PythonAPI/examples/open3d_lidar.py)
 强制打补丁
