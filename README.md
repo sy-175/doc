@@ -182,6 +182,13 @@ $$
 
 
 ## 常见问题
+
+* 修改文件后不自动加载更新
+
+> 解决：将 click 的版本从 8.3.0 回退到 8.2.1
+> 
+> `pip install  --force-reinstall click==8.2.1`
+
 * 编译文档时报错：`ERROR - Config value: ‘plugins‘. Error: The “redirects“ plugin is not installed`
 
   > [解决](https://blog.csdn.net/LostSpeed/article/details/127192365) ：
