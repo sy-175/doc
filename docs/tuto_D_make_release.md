@@ -35,6 +35,10 @@
 
 * [像素流](ue/pixel_streaming.md)
 
+## 下载发行版的可执行程序
+
+
+
 ## [发布可执行游戏](https://blog.csdn.net/zl834205311/article/details/125905705) 
 * 安装`pyinstaller`：
 ```shell
@@ -45,6 +49,7 @@ pip install pyinstaller
 pip install auto-py-to-exe
 ```
 然后运行`auto-py-to-exe`。
+
 
 ## 发布带Carla插件的虚幻编辑器
 

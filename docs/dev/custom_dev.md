@@ -109,6 +109,30 @@ git push hutb
 
 ## 其他
 
+##### [获取公众号的主页链接](https://www.zhihu.com/question/51987041/answer/3059575358)
+
+1. 复制文章的链接，在电脑端浏览器打开。
+
+2. 查看网页源代码。在浏览器打开文章之后，鼠标右键单击，并选择【查看页面源代码】。
+
+3. 查找Biz 值：在页面源代码界面，按住ctrl+F 快捷键，搜索Biz, 找到如下的位置，并复制图中这个双引号里面的信息： MzI2ODk5MzE5Ng==
+
+4. 将前面复制的Biz 值，放入下面这个链接里面正确的位置就好了。
+
+万能公式：
+```shell
+https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=替换biz的值&scene=124#wechat_redirect
+```
+
+所以获得的 OpenHUTB 公众号链接就是：
+```shell
+https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI2ODk5MzE5Ng==&scene=124#wechat_redirect
+```
+
+5. 在微信中打开公众号链接（注意不能在电脑浏览器中打开）。
+
+
+
 ##### [修改commit的记录](https://blog.csdn.net/zi__li/article/details/106604872)
 如果要只是要修改上一次commit的信息，如果是用TortoiseGit，在Commit界面选择Amend Last Commit即可修改。
 
