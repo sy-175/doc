@@ -66,7 +66,7 @@ cd PythonAPI/util && python3 config.py -fps=5
 ```
 
 !!! 重要
-	**不要将帧速率降低到 10 FPS 以下**。我们的设置已调整为将物理引擎限制在最低 10 FPS。如果游戏节拍低于此值，物理引擎仍将模拟 10 FPS。在这种情况下，依赖于游戏增量时间的事物不再与物理引擎同步，参考问题 [#695](https://github.com/carla-simulator/carla/issues/695) 。目前已启用最多 6 个物理子步骤，每个子步骤的最大增量时间为 0.016667 秒（60FPS）。因此，帧率不能低于 10 FPS。
+	**不要将帧速率降低到 10 FPS 以下**。我们的设置已调整为将物理引擎限制在最低 10 FPS。如果游戏节拍低于此值，物理引擎仍将模拟 10 FPS。在这种情况下，依赖于游戏增量时间的事物不再与物理引擎同步，参考问题 [#695](https://github.com/carla-simulator/carla/issues/695) 。目前已启用最多 6 个物理子步骤，每个最大子步骤的增量时间为 0.016667 秒。因此，帧率不能低于 10 FPS（包含 6 个物理子步骤的 1 帧最多 0.016667×6=0.1秒）。
 
 ### 模拟记录 <span id="tips-when-recording-the-simulation"></span>
 
@@ -249,7 +249,7 @@ while True:
 	world.tick()
 ```
 
-播放功能的一个具体示例：
+重放功能的一个具体示例：
 
 ```py
 client = carla.Client(HOST, PORT) # 连接到服务器
