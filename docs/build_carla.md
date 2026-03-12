@@ -26,12 +26,30 @@
 ### 科学上网 <span id="internet"></span>
 
 参考其中的一个链接进行科学上网的订阅和环境配置：[链接1](https://www.starlinkcloud.cc/#/register?code=Ob4iMh8u) 、[链接2](https://portal.shadowsocks.au/) 、[链接3](https://mk.mikadonet.xyz/#/login) 、[链接4](https://711jsq.club/#/login) 。
-比如使用Clash，首先在`配置`页面下根据订阅链接进行下载，然后在`常规`页面开启`系统代理`，最后测试是否可以正常科学上网（有些支持在客户端中登录账户即可使用）。
+比如使用Clash，首先在`配置`页面下根据订阅链接进行下载，然后在`常规`页面开启`系统代理`，最后测试是否可以正常科学上网（有些支持在客户端中登录账户即可使用）。并确认代理的端口（比如10090）。
+
+```shell
+# 设置代理
+git config --global http.proxy 127.0.0.1:10090
+git config --global https.proxy 127.0.0.1:10090
+# 查看当前的代理设置
+git config --global --get http.proxy
+git config --global --get https.proxy
+# 取消全局代理设置
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+### Steamapp 加速
+
+[下载地址](https://steampp.net/) 。
 
 ### Github 访问加速
 
 有时候 Github 访问不了，可以下载并运行 [链接](https://gitee.com/OpenHUTB/sw/releases/tag/up) 中对应平台的软件（比如 Windows 平台中下载 [fastgithub-win-x64.zip](https://gitee.com/OpenHUTB/software/releases/download/speed_up_github/fastgithub-win-x64.zip) 解压后运行`FastGithub.UI.exe`即可正常访问Github）。
 
+
+其他方法：[链接](https://www.cnblogs.com/ting1/p/18356265) 。
 
 #### Ubuntu 下的配置
 
