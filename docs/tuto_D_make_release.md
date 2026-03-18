@@ -241,6 +241,8 @@ git push
 
 ### [发布到微软商城](https://blog.csdn.net/csdn_ad986ad/article/details/135417415)
 
+[**对hutb_downloader.exe进行签名**](https://blog.csdn.net/dounick/article/details/105643285) 。
+
 1. 打开操作系统的 [开发者选项](https://blog.csdn.net/2301_77171572/article/details/146528815) 。
 
 2. 双击安装`.pfx`证书，必须放入`本地计算机`（而不是`当前用户`）的“受信任的根证书颁发机构”，然后选择`将所有的证书都放入下列存储(P)`->`受信任的根证书颁发机构`。
@@ -256,7 +258,8 @@ C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64
 ```
 
 
-[使用MSIX Packaging Tool工具修改msix程序包](https://www.cnblogs.com/oboth-zl/p/17638705.html)
+* [自签名](https://zhuanlan.zhihu.com/p/29736004658)
+* [使用MSIX Packaging Tool工具修改msix程序包](https://www.cnblogs.com/oboth-zl/p/17638705.html)
 
 
 ### 自定义最小化 git
