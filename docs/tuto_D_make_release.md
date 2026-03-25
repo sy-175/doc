@@ -241,6 +241,8 @@ git push
 
 ### [发布到微软商城](https://blog.csdn.net/csdn_ad986ad/article/details/135417415)
 
+[**对hutb_downloader.exe进行签名**](https://blog.csdn.net/dounick/article/details/105643285) 。
+
 1. 打开操作系统的 [开发者选项](https://blog.csdn.net/2301_77171572/article/details/146528815) 。
 
 2. 双击安装`.pfx`证书，必须放入`本地计算机`（而不是`当前用户`）的“受信任的根证书颁发机构”，然后选择`将所有的证书都放入下列存储(P)`->`受信任的根证书颁发机构`。
@@ -256,7 +258,56 @@ C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64
 ```
 
 
-[使用MSIX Packaging Tool工具修改msix程序包](https://www.cnblogs.com/oboth-zl/p/17638705.html)
+* [自签名](https://zhuanlan.zhihu.com/p/29736004658)
+* [使用MSIX Packaging Tool工具修改msix程序包](https://www.cnblogs.com/oboth-zl/p/17638705.html)
+
+
+### 自定义最小化 git
+
+
+
+使用 [2.40便携版](https://github.com/git-for-windows/git/releases/download/v2.40.0-rc1.windows.1/PortableGit-2.40.0-rc1-64-bit.7z.exe) 进行瘦身：
+测试命令：
+```bat
+rem 第一次
+.\git clone https://OpenHUTB:T8w6TYB_r71gGTP3A02B@git.code.tencent.com/OpenHUTB/lfs_demo.git  &&  cd lfs_demo  && D:\hutb\git\bin\git.exe lfs pull  && cd ..
+rem 后面每次
+del /q lfs_demo\*.*  && rd /s /q "lfs_demo"  && .\git clone https://OpenHUTB:T8w6TYB_r71gGTP3A02B@git.code.tencent.com/OpenHUTB/lfs_demo.git  &&  cd lfs_demo  && D:\hutb\git\bin\git.exe lfs pull  && cd ..
+```
+原来有314M，
+删除技巧：
+
+1. 一个目录下的dll全部删除，把运行拉取大文件缺少的dll留下；
+2. exe文件使用二分法进行删除
+3. 其他文本文件尽量全删除
+
+获得的[最小化git](https://gitee.com/OpenHUTB/sw/releases/download/up/git_min.zip) 。
+
+
+!!! 注意：
+   MinGit-2.40.0-rc1-busybox-32-bit.zip 没有git-lfs功能
+
+
+其他尝试：
+
+下载源码：
+```batch
+rem 下载
+powershell -Command "(New-Object System.Net.WebClient).DownloadFile('https://github.com/git/git/archive/refs/tags/v2.40.3.zip', 'git_v2.40.3.zip')"
+rem 解压
+powershell -Command "Expand-Archive 'git_v2.40.3.zip' -DestinationPath '.' -Force"
+cd git-2.40.3
+```
+
+* [包含windows补丁的git](https://github.com/git-for-windows/git/releases) 。
+
+* 安装[Git 的 Windows SDK](https://gitforwindows.org/#download-sdk) ，打开它的 `git-bash.exe`，`cd`进入 Git 的工作树并运行`make`
+
+* git-2.40.0-rc1.windows.1、git-2.41.0.windows.3、git-2.46.0-rc1.windows.1.zip 编译不通过。
+
+* git-2.53.0.windows.2 可以编译通过。
+
+* 使用 PortableGit-2.46.0-rc1-64-bit.7z.exe可以下载大文件
 
 
 ## 问题
@@ -269,6 +320,16 @@ TypeError: expected str, bytes or os.PathLike object, not _io.BytesIO
 pygame.font.Font(pygame.font.get_default_font(), 20)
 ```
 获得的字体文件为`freesansbold.ttf`，最后将字体文件拷贝到和exe文件相同的路径，然后执行即可。
+
+* The following component(s) are required to run this program: Microsoft Visual C++ Runtime
+
+dll所在路径：C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Redist\MSVC\14.44.35112\x64\Microsoft.VC143.CRT\*.dll
+
+解决：vc_redist.x64.exe（位于：C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Redist\MSVC\14.44.35112）
+```bat
+rem 安装命令
+VC_redist.x64.exe /install /quiet /norestart
+```
 
 ## 参考
 * [内网穿透](https://natapp.cn/article/config_ini)

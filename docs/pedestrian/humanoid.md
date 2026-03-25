@@ -1,8 +1,12 @@
 # [具身人模拟](https://github.com/google-deepmind/mujoco/network/dependents)
 
-<!-- 共4581个仓库，
+<!-- 共5k+个仓库，
 更新到的页面： 
-https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=NDg2MjkxMzUwMzI
+https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=NDk2NzQxMDI1NTI
+-->
+
+<!-- 更新到最新的仓库： 
+https://github.com/ann-w/solving_drl_tasks_with_es_and_linear_policy_networks
 -->
 
 - [__人__](#humanoid)
@@ -30,6 +34,7 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 - [__控制__](#control)
 - [__测试__](#test)
 - [__数据__](#data)
+- [__世界模型__](#world_model)
 - [__大模型__](#llm)
 - [__建模__](#modelling)
 - [__研究__](#research)
@@ -44,6 +49,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 
 ## 肌肉骨骼人 <span id="humanoid"></span>
+
+[全身肌肉骨骼模型](https://github.com/amathislab/musclemimic_models)
 
 [使用 MuJoCo 物理引擎模拟的肌肉骨骼模型要解决的环境](https://github.com/MyoHub/myosuite) - 包含在 OpenAI gym API 中
 
@@ -111,6 +118,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [单变量径向基函数层：受大脑启发的低维输入深度神经层](https://github.com/bkpcoding/urbf)
 
+[KINESIS：基于强化学习的运动模仿，用于实现生理上合理的肌肉骨骼运动控制](https://github.com/TripanDham/Kinesis_prosthetic)
+
 [用于机器人、深度强化学习和神经科学研究的 Python 工具](https://github.com/shandilya1998/neurorobotics)
 
 
@@ -168,6 +177,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [dm_robotics：为机器人研究创建和使用的库、工具和任务](https://github.com/google-deepmind/dm_robotics)
 
+[高级高尔夫建模套件，包含 MuJoCo、Drake、Pinocchio、OpenSim 和 Matlab 引擎，用于生物力学和机器人仿真](https://github.com/D-sorganization/UpstreamDrift)
+
 [通过将人体运动数据传输到机器人模型（Unitree H1），并应用逆运动学 (IK) 和潜在的强化学习 (RL) 等先进技术进行实时自适应，使机器人能够执行动态且自然的类人运动](https://github.com/Noora-Alhajeri/sport-motion-retargeting)
 
 
@@ -183,6 +194,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [人形策略学习中的对抗性运动和运动模仿](https://github.com/TeleHuman/ALMI-Open)
 
+[用于人形机器人运动和操作的强化学习训练库。基于 MuJoCo 和 JAX 构建](https://github.com/mshicom/ksim)
+
 [用于类人运动和操控的强化学习训练库](https://github.com/mshicom/ksim)
 
 [ASAP：结合模拟和现实世界的物理来学习敏捷的人形机器人全身技能](https://github.com/LeCAR-Lab/ASAP)
@@ -196,6 +209,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [首先用于机器人和人体模板相匹配，同样，训练用于教师网络和学生网络的调整](https://github.com/Ethereal1679/H2O_Sim_Real_reshuffle)
 
 [人形机器人“h1”右臂任务空间控制](https://github.com/parsa25b/robot_task_space_control)
+
+[ASAP：将仿真与现实世界的物理学相结合，以学习敏捷的人形机器人全身技能](https://github.com/LeCAR-Lab/ASAP)
 
 [包含 IsaacLab 扩展，用于训练人形机器人的神经全身控制器](https://github.com/forerunnerai/HOVER)
 
@@ -307,6 +322,20 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [跑步者：无需动作捕捉的类人跑步强化学习](https://github.com/dancing-amigo/Runner)
 
+[通过单视频模仿教授人形机器人操作技能](https://github.com/UT-Austin-RPL/OKAMI)
+
+[学习力适应型人形机器人移动操控](https://github.com/LeCAR-Lab/FALCON)
+
+[hurodes（人形机器人描述）是一个用于描述、转换和处理人形机器人模型的 Python 工具包](https://github.com/ZyuonRobotics/humanoid-robot-description)
+
+[SPIDER：可扩展的基于物理的灵巧重定向](https://github.com/facebookresearch/spider)
+
+[Genesis Humanoid 是一个基于 Genesis 模拟器的一体化人形机器人研究平台。它支持实时人机重定向，包含格式统一的不同运动数据集，提供端到端的学习流程，并提供模块化的底层控制测试平台用于实验。](https://github.com/vesoma-main/Genesis-Humanoid)
+
+[包含模型检查点和脚本，用于训练、评估和部署用于人形机器人的高级全身控制器](https://github.com/NVlabs/GR00T-WholeBodyControl)
+
+[ProtoMotions 是一个 GPU 加速的仿真和学习框架，用于训练物理模拟的数字人和人形机器人。](https://github.com/NVlabs/ProtoMotions)
+
 [专家接近度作为单次演示模仿学习的替代奖励](https://github.com/stanl1y/tdil)
 
 
@@ -319,6 +348,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [双足机器人简单全技能堆栈](https://github.com/Alexhuge1/fftai_alexbotmini)
 
 [由伺服电机驱动的 ESP32 + Python 控制的双足机器人](https://github.com/AsterisCrack/BipedRobot)
+
+[FootStepNet Envs：用于快速在线双足行走规划和预测的行走规划强化学习环境](https://github.com/Rhoban/footstepnet_envs)
 
 [使用行为克隆（BC）和近端策略优化（PPO）训练被动步行者的综合强化学习](https://github.com/yunusdanabas/passive_walker_rl)
 
@@ -352,6 +383,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [使用逆运动学实现 Unitree G1 人形机器人的基本手部运动](https://github.com/yediong/IK-humanoid)
 
 [对使用机械手进行强化学习的探索](https://github.com/Autobots-Visman/reinforcement-learning)
+
+[GCRL_UR10e 是一个用于 UR10e 机械臂的仿真到实战强化学习框架](https://github.com/cherylwang20/GCRL_UR10e)
 
 [RoboTwin：具有生成数字孪生的双臂机器人基准](https://github.com/Tengbo-Yu/robotwin)
 
@@ -418,6 +451,34 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [一款一体化 ROS 软件包 RoTools](https://github.com/DrawZeroPoint/RoTools) - 用于高级机器人任务调度、视觉感知、路径规划、仿真以及直接/远程操控。它利用 BehaviorTree 实现快速的任务构建和协调，并提供各种实用程序来弥合真实/模拟机器人与高级任务调度程序之间的差距。
 
+
+## 世界模型  <span id="world_model"></span>
+
+[解耦世界模型：学习从干扰视频中迁移语义知识以进行强化学习](https://github.com/qiwang067/DisWM)
+
+[克服知识障碍：通过预训练世界模型进行观察的在线模仿学习](https://github.com/argmax-ai/aime-v2)
+
+[克服知识障碍：利用预训练世界模型进行视觉观察的在线模仿学习](https://github.com/IcarusWizard/AIME-NoB)
+
+[分层世界模型能够实现跨多个时间尺度的推理](https://github.com/CognitiveModeling/THICK)
+
+[一种基于视觉模型的强化算法 Dreamer](https://github.com/adityabingi/Dreamer) - 它学习一个世界模型，该模型从高级像素图像中捕捉潜在动态，并完全在从学习到的世界模型中想象的部署中训练控制代理
+
+[去噪 MDP：比世界本身更好地学习世界模型](https://github.com/facebookresearch/denoised_mdp)
+
+[研究世界模型中时空信息的理解](https://github.com/hironona/world-language-grounding)
+
+[预训练以机器人为中心的世界模型以实现高效的视觉控制](https://github.com/robo-centric-wm/robo-centric-world-model)
+
+[用机械可解释性研究 OthelloGPT 世界模型学习](https://github.com/Jim-Maar/interpretability)
+
+[个人实验工作场所，用于研究世界建模理念](https://github.com/elilaird/dino_wm)
+
+[联合嵌入预测世界模型在物理规划中的成功驱动因素](https://github.com/facebookresearch/jepa-wms)
+
+[DexWM：用于从人类视频中学习灵巧手-物体交互的世界模型](https://github.com/facebookresearch/dexwm)
+
+[通过最大化证据进行行动推断：通过世界模型进行观察的零样本模仿](https://github.com/Zoefia/Zoefia-aime-extrapolation) - [其他]((https://github.com/argmax-ai/aime))
 
 
 ## 强化学习 <span id="rl"></span>
@@ -562,6 +623,26 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [基于模型的 RL 算法 PlaNet 的 PyTorch 实现](https://github.com/smmislam/pytorch-planet)
 
+[基于模型的强化学习跳跃者](https://github.com/caiopetruccirosa/hopper-walker-model-based-rl)
+
+[少样本离域动态强化学习中的迁移保守方法](https://github.com/PaulDaoudi/FOOD)
+
+[在 MuJoCo 中实现的开源强化学习环境与 Franka 机械臂](https://github.com/learningLogisticsLab/franka_mujoco)
+
+[用于强化学习的人工时间膨胀](https://github.com/HeavenzFire/Artificial-Time-Dilation)
+
+[用于持续强化学习的 JAX 实现](https://github.com/LucMc/continual-learning)
+
+[影响力快照：在线强化学习的局部数据归因框架](https://github.com/LDAORL/LDA-ORL)
+
+[突破强化学习的性能瓶颈需要推理策略](https://github.com/instadeepai/rl-inference-strategies)
+
+[DyLam：一种用于强化学习算法的动态奖励加权框架](https://github.com/goncamateus/dylam)
+
+[基于人类偏好的深度强化学习](https://github.com/JKSully/rl-teacher-torch)
+
+[Diffusion-Contrast RL: 扩散策略与对比行为先验的多模态强化学习](https://github.com/NJX-njx/Diffusion-Contrast-RL)
+
 [用于样本有效目标条件强化学习的度量残差网络](https://github.com/Cranial-XIX/metric-residual-network)
 
 ### DQN  <span id="dqn"></span>
@@ -619,6 +700,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [对安全强化学习的软演员-评论家 (SAC) 算法的修改，结合概率推理来强制执行安全约束，同时保持有效的探索](https://github.com/PabloLah/Probabilistic-Inference-for-Safe-RL)
 
 [强化学习软演员评论家算法教程](https://github.com/khhandrea/python-RL-SAC)
+
+[Actor-Critic without Actor](https://github.com/ku-dmlab/ACA)
 
 [JSAC 是一个基于软演员-评论 (SAC) 的强化学习 (RL) 系统，旨在实现高性能且稳定的图像学习](https://github.com/fahimfss/JSAC)
 
@@ -704,17 +787,19 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [从人类示范中学习操纵技能](https://github.com/aai4r/aai4r-pouring-skill)
 
-[克服知识障碍：通过预训练世界模型进行观察的在线模仿学习](https://github.com/argmax-ai/aime-v2)
-
 [通过精确标记的人类演示进行模仿学习](https://github.com/yilongsong/action_extractor)
+
+[通过恢复策略实现高效的在线模仿学习](https://github.com/NTU-RL2025-02/RecoveryDAgger)
 
 [TamedPUMA：利用几何织物进行安全稳定的模仿学习](https://github.com/tud-amr/pumafabrics)
 
+[RIZE：用于模仿学习的自适应正则化](https://github.com/adibka/RIZE)
+
 [250美元机械臂的模仿学习](https://github.com/Ryan-GRY/ACT_lcb)
 
-[克服知识障碍：利用预训练世界模型进行视觉观察的在线模仿学习](https://github.com/IcarusWizard/AIME-NoB)
-
 [通过人类远程操作实现人形机器人的深度模仿学习](https://github.com/UT-Austin-RPL/TRILL)
+
+[机器人从人类行为先验中学习](https://github.com/waddah27/robot_learning_from_BP)
 
 [通用模仿学习的进化策略](https://github.com/SilviaSapora/evil)
 
@@ -771,6 +856,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [分层元强化学习](https://github.com/Mgineer117/himeta)
 
 [Grid World中的分层强化学习 (HRL)方法](https://github.com/Mgineer117/WINTER)
+
+[SOL 是一种高度可扩展的分层强化学习算法，它能够从在线交互中联合学习选项策略和控制器策略](https://github.com/facebookresearch/sol)
 
 [通过分层强化学习重新思考决策转换器](https://github.com/mamengyiyi/Autotuned-Decision-Transformer)
 
@@ -909,7 +996,13 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [探索双手机器人操作中的主动视觉](https://github.com/Soltanilara/av-aloha)
 
+[VideoMimic 的实物到仿真流程可从单摄像头视频中重建 3D 环境和人体运动，并将这些运动重新定向到人形机器人以进行模仿学习](https://github.com/hongsukchoi/VideoMimic) - 它提取世界坐标系中的人体姿态，将其映射到机器人配置，并将环境重建为点云，随后将其转换为网格
+
+[SmoothMoCapRetarget 将人体运动捕捉数据转换为人形机器人流畅且运动学上可行的轨迹](https://github.com/YiyangShao2003/SmoothMoCapRetarget)
+
 [在 Atari Pong 游戏上使用各种视觉模式训练和评估不同的深度强化学习代理](https://github.com/andresnowak/pong_vision_master)
+
+[AMPLIFY：用于从视频中学习机器人的无动作运动先验](https://github.com/pairlab/AMPLIFY)
 
 [动作捕捉环境](https://github.com/hartikainen/mocap-environments)
 
@@ -927,6 +1020,10 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [通过虚拟手与可变形物体进行交互和抓取，以增强手术模拟效果](https://github.com/Carlo1109/Soft-Touch)
 
+[空间触觉——基于触觉的机器人环境](https://github.com/pranavlakshmanan/Space_Touch)
+
+[MuJoCo 中基于 Allegro Hand 的视觉触觉感知灵巧操作——基于视觉和触觉融合的神经 SDF 重建](https://github.com/andomeder/neuralfeels-mujoco)
+
 [M2VTP 是一个专为视觉-触觉融合而设计的预训练网络](https://github.com/LQTS/Pretraining_for_M2VTP)
 
 [基于胡须的触觉导航系统](https://github.com/SVDouble/RatteChan)
@@ -943,12 +1040,12 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [通过 ROS 集成，在 MuJoCo 中对 DexRobot 手进行触觉模拟](https://github.com/DexRobot/dexrobot_mujoco) - 支持 MuJoCo 原生触摸传感器和 TaShan 11 维触觉传感器，有视频效果
 
+[用于模拟高保真布料物理、服装碰撞和实时交互的实验引擎，这些引擎使用了多种技术栈（Python/MuJoCo 和 Rust/WASM）](https://github.com/MTawhid7/Virtual-Try-On)
+
 [一个关于连接触觉设备、VR 耳机和物理模拟以模拟可变形物体的实时触摸的研究项目](https://github.com/SkytAsul/DeformableSimulation)
 
 
 ## 规划 <span id="planning"></span>
-
-[分层世界模型能够实现跨多个时间尺度的推理](https://github.com/CognitiveModeling/THICK)
 
 
 [使用基于激光的感知在 MuJoCo 环境中实现人机感知移动机器人导航的强化学习框架](https://github.com/otr-ebla/MuJoCo_HumanAware_MobileRobot_RLNavigation)
@@ -978,8 +1075,6 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 ## 控制 <span id="control"></span>
 
-[一种基于视觉模型的强化算法 Dreamer](https://github.com/adityabingi/Dreamer) - 它学习一个世界模型，该模型从高级像素图像中捕捉潜在动态，并完全在从学习到的世界模型中想象的部署中训练控制代理
-
 [基于对比示例的控制](https://github.com/khatch31/laeo)
 
 [机器人蛇形运动](https://github.com/alexandrubalotescu/Robot-Snake-Locomotion)
@@ -987,6 +1082,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [MPC_MBPO](https://github.com/bvanbuskirk/MPC_MBPO)
 
 [为 Franka Emica Panda 机械手实施的模型预测控制](https://github.com/tomasz-naklicki/Panda_MJ_MPC)
+
+[用于微调底层机器人动作的DPO](https://github.com/kenma8/dpo_robotics)
 
 [基于强化学习的双轮足平衡机器人控制](https://github.com/aa4cc/sk8o-rl)
 
@@ -1033,13 +1130,21 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [用于测试/评估 mujoco 物理模拟器的沙盒](https://github.com/implementedrobotics/mujoco-sandbox)
 
+[创建 Kinfer 文件以测试 Kscale 机器人功能](https://github.com/kscalelabs/kinfer-unit-tests)
+
 [将Humanoid-gym框架评估其他人形机器人（以H1为例）](https://github.com/Chenhui98/Apply-humanoid-gym-to-other-robots)
 
 [offline_rl_benchmark_by_argo](https://github.com/hjcwuhuqifei/offline_rl_benchmark_by_argo)
 
+[MOSAIC：一个用于跨范式比较和评估同构和异构多智能体强化学习、学习逻辑模型、虚拟逻辑模型和人类决策者的统一平台](https://github.com/Abdulhamid97Mousa/mosaic)
+
 [验证gymnasium_roboticsmujoco 环境的 MuJoCo 模型变化](https://github.com/Kallinteris-Andreas/gym-mjc-v5-model-validation) - [其他](https://github.com/Kallinteris-Andreas/gymnasium-mujuco-v5-envs-validation)
 
+[MLPro 测试中心 – MLPro 组件和算法的使用方法和基准测试工具](https://github.com/fhswf/MLPro-Test-Center)
+
 [rl-test](https://github.com/Oyveloper/rl-test)
+
+[使用线性策略网络解决深度强化学习基准测试](https://github.com/ann-w/solving_drl_tasks_with_es_and_linear_policy_networks)
 
 [CQL，PDQN，离线RL评估](https://github.com/zhuhxi/DriverOrderOfflineRL)
 
@@ -1093,9 +1198,13 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [域随机化示例](https://github.com/ugo-nama-kun/domain_randomization)
 
+[TWIST2：可扩展、可移植且全面的类人机器人数据采集系统](https://github.com/meetsitaram/TWIST2)
+
 [MimicGen：使用人类演示的可扩展机器人学习的数据生成系统](https://github.com/NVlabs/mimicgen)
 
 [用于离线强化学习的组合合成数据生成](https://github.com/spatank/compositional-rl-synth-data)
+
+[InternDataEngine：开创性的高保真合成数据生成器，用于机器人操作](https://github.com/InternRobotics/InternDataEngine)
 
 [结果分享](https://github.com/ykh6581394/resultshare)
 
@@ -1104,8 +1213,12 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [可变形物体操控沙盒](https://github.com/nicholasprayogo/dom_sandbox)
 
 
+
+
 ## 大模型 <span id="llm"></span>
 
+
+[RoboMind：基于LLM的Unitree G1机器人预测规划控制——Nebius AI黑客马拉松](https://github.com/0-5-blood-prince/nebius-build)
 
 [利用言语纠正来提升机器人在执行复杂的长期任务时的表现](https://github.com/yay-robot/yay_robot)
 
@@ -1114,16 +1227,35 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [通用机器人和具体化人工智能学习的生成世界](https://github.com/Genesis-Embodied-AI/Genesis)
 
 
+[基于迭代策略细化的大型语言模型感觉运动控制](https://github.com/jtyska/llm-robotics-article)
+
+[优化视觉-语言-动作模型：提升速度和成功率](https://github.com/hanyangclarence/openvla-oft)
 
 [面向长远强化学习的 LLM 分解和奖励设计](https://github.com/tjvitchutripop/sds685-llm-long-horizon-rl)
 
+[VLABench：一个用于语言条件下的机器人操作长时序推理任务的大规模基准测试](https://github.com/lPkaAHg4tc/NewRepository)
+
 [探究在定制机器人形态上进行微调时视觉-语言-动作模型的约束](https://github.com/andomeder/vla-finetuning-investigation)
+
+[DexVLA：用于视觉运动策略学习的带插件扩散专家的视觉语言模型](https://github.com/juruobenruo/DexVLA)
+
+[训练和部署用于机器人模仿学习的视觉-语言-动作（VLA）模型](https://github.com/open-edge-platform/physical-ai-studio)
 
 [TinyVLA：机器人的视觉-语言-动作模型](https://github.com/HanshangZhu/vla-vlm-test)
 
+[双过程潜在导向视觉语言动作模型](https://github.com/GoncaloMark/DuPLO-VLA)
+
+[语言即记忆：持续强化学习](https://github.com/deepbrain-labs/language-as-memory-continual-rl)
+
 [RoboMoRe：基于 LLM 的机器人协同设计，通过形态和奖励的联合优化](https://github.com/morphing-matter-lab/RoboMoRe)
 
+[这款 MCP 服务器可让 AI 系统控制Pollen Robotics 的 Reachy Mini机器人——使其能够说话、聆听、观察，并通过肢体动作表达情感。它可与 Claude、GPT、Grok 或任何兼容 MCP 的 AI 系统配合使用](https://github.com/jackccrawford/reachy-mini-mcp)
+
+[VLA架构研究：在定制机器人上对SmolVLA进行微调](https://github.com/andomeder/vla-finetuning-investigation)
+
 [VLA-Cache：通过机器人操作中的自适应令牌缓存实现高效的视觉-语言-动作模型](https://github.com/siyuhsu/vla-cache)
+
+[一种人辅助动作策略优化（HAPO）方法，以纠正交互失败并实现视觉-语言-动作（VLA）模型的稳定优化](https://github.com/bytedance/human_assisted_preference_optimization)
 
 [用大型语言模型 (LLM) 进行感知、规划和动作生成](https://github.com/pbanavara/modular_vla_pipeline)
 
@@ -1221,6 +1353,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [支持 Humanoid-v5 MuJoCo 环境](https://github.com/p1m0/GIST-RL-Project)
 
 
+[Infinigen：利用程序生成技术打造无限逼真世界](https://github.com/princeton-vl/infinigen)
+
 
 [获取机器人 URDF](https://github.com/Engineering-Geek/robot_arm)
 
@@ -1296,6 +1430,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [开发考虑人类偏好的机器人系统](https://github.com/joonhyung-lee/gov-prj-etri-llm-robotics)
 
+[Monty 是一个基于新皮层“千脑理论”的感觉运动学习框架](https://github.com/thousandbrainsproject/tbp.monty)
+
 [在机器学习机制可解释性方面的工作](https://github.com/danibalcells/mech-interp-notebooks)
 
 [低质量数据的零样本强化学习](https://github.com/enjeeneer/zero-shot-rl)
@@ -1304,15 +1440,21 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [交互信息技能学习的分析与要素](https://github.com/jens321/csf) - [其他](https://github.com/Princeton-RL/contrastive-successor-features)
 
+[基于学习黎曼度量的可证明稳定的模型强化学习的收缩度量的数学保证的稳定机器人控制](https://github.com/sirraya-labs/CDM)
+
+[扩散引导是一种可控策略改进算子](https://github.com/kvfrans/cfgrl)
+
 [DIME：基于扩散的最大熵强化学习](https://github.com/ALRhub/DIME)
 
+[用于机器人操作任务模仿学习的动作分块变换器（ACT）的端到端实现方法](https://github.com/andomeder/act-mujoco-manipulation)
 
+[3D扩散策略：基于简单3D表示的可泛化视觉运动策略学习](https://github.com/Wushr-Lance/Multi-task-3D-Diffusion-Policy)
 
-[研究世界模型中时空信息的理解](https://github.com/hironona/world-language-grounding)
-
-[解开的世界模型：学习从分散注意力的视频中迁移语义知识以进行强化学习](https://github.com/qiwang067/DisWM)
+[通过自由能最小化进行稳健决策](https://github.com/jamalihuzaifa9/Robust-Decisiosn-Making-Via-Free-Energy-Minimization)
 
 [谷歌研究库](https://github.com/google-research/google-research)
+
+[扩展跨具身学习：一项适用于操作、导航、运动和航空的策略](https://github.com/rail-berkeley/crossformer)
 
 [通过强化学习和域随机化实现 Hopper 控制的模拟到现实迁移](https://github.com/alexscavo/Sim-to-Real-Transfer-Project-RL)
 
@@ -1334,17 +1476,11 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [学习执行长视界移动操作任务对于推动家庭和工作场所机器人技术的发展至关重要](https://github.com/h2r/LAMBDA)
 
-[预训练以机器人为中心的世界模型以实现高效的视觉控制](https://github.com/robo-centric-wm/robo-centric-world-model)
-
 [混合可微分模拟：通过数据改进实际部署](https://github.com/dcsteinhauser/HDS)
 
 [对称强化学习损失用于不同任务和模型尺度上的稳健学习](https://github.com/shashacks/Symmetric_RL)
 
-[用机械可解释性研究 OthelloGPT 世界模型学习](https://github.com/Jim-Maar/interpretability)
-
 [通过熵最大化实现域随机化](https://github.com/gabrieletiboni/doraemon)
-
-[通过最大化证据进行行动推断：通过世界模型进行观察的零样本模仿](https://github.com/Zoefia/Zoefia-aime-extrapolation)
 
 [通过因果知识提高任务无关探索的效率](https://github.com/CMACH508/CausalExploration)
 
@@ -1373,8 +1509,6 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [OPTIMUS：利用视觉运动变换器进行模拟任务和运动规划](https://github.com/NVlabs/Optimus)
 
 [从不平衡演示中进行半监督模仿学习](https://github.com/tRNAoO/Ess-InfoGAIL)
-
-[通过最大化证据进行行动推断：基于世界模型的观察零样本模仿](https://github.com/argmax-ai/aime)
 
 [按复杂性和关节数量的递增顺序训练 MuJoCo 环境（Hopper、Half-Cheetah 和 Ant）的模型](https://github.com/Panjete/mujocoagents)
 
@@ -1506,13 +1640,13 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [NaturalNets](https://github.com/neuroevolution-ai/NaturalNets)
 
-[去噪 MDP：比世界本身更好地学习世界模型](https://github.com/facebookresearch/denoised_mdp)
-
 [深度强化学习中的首因偏差](https://github.com/evgenii-nikishin/rl_with_resets) - 深度强化学习代理的 JAX 实现，带有重置功能
 
 [基于近似模型的安全强化学习屏蔽](https://github.com/sacktock/AMBS)
 
 [利用扩散模型作为高表达性的策略类别](https://github.com/twitter/diffusion-rl) - 用于行为克隆和策略正则化
+
+[构建真正具有思考能力的脉冲神经网络的框架，该网络通过循环动力学产生思想，形成概念吸引子，并实现自发认知](https://github.com/kevin-heitfeld/thalia)
 
 [构建目标驱动的具身化大脑模型](https://github.com/ccnmaastricht/angorapy)
 
@@ -1549,6 +1683,10 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [学习-强化学习](https://github.com/ayton-zhang/Learning-Reinforcement-Learning)
 
+[具身人工智能入门课程资料库](https://github.com/wannabeyourfriend/PKU-EECS-EAI-2025spring)
+
+[基于 PyTorch 的模块化深度强化学习框架。本书《深度强化学习基础》的配套库](https://github.com/kengz/SLM-Lab)
+
 [强化学习的深入讲解](https://github.com/rogerwater/Reinforcement-Learning)
 
 [原始源代码 Michael Hu 撰写的《强化学习的艺术》](https://github.com/Apress/art-of-reinforcement-learning)
@@ -1561,6 +1699,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [伯克利 CS 285的作业：深度强化学习、决策和控制](https://github.com/Roger-Li/ucb_cs285_homework_fall2023) - [其他1](https://github.com/LuK2019/DeepRL) 、[其他2](https://github.com/aayushg55/cs285_hw1_dagger) 、[其他3](https://github.com/berkeleydeeprlcourse/homework_fall2023) 、[其他4](https://github.com/carola-niu/RL_cs285) 、 [其他5](https://github.com/Manaro-Alpha/CS285_DeepRL_hw_sols) 、[其他6](https://github.com/Hoponga/cs285) 、 [其他7](https://github.com/anna-ssi/UCBerkley-CS285-homework-2021) 、[其他8](https://github.com/anna-ssi/UCBerkley-CS285-homework-2021) 、[其他9](https://github.com/Applewonder/CS285-2022) 、[其他10](https://github.com/Arenaa/CS-285) 、[其他11](https://github.com/brunonishimoto/cs285-drl) 、 [其他12](https://github.com/ElPescadoPerezoso1291/cs285-hw3) 、 [其他13](https://github.com/dylan-goetting/RL285) 、 [其他14](https://github.com/nikhil-pitta/CS285Hw) 、[其他15](https://github.com/prestonmccrary/temp) 、 [其他16](https://github.com/jnzhao3/Behavior-Cloning-with-MuJoCo) 、[其他17](https://github.com/levje/cs285_fall2023) 、[其他18](https://github.com/prestonmccrary/garbage) 、[其他19](https://github.com/WangYCheng23/rl_cs285_hw) 、[其他20](https://github.com/nicholaschenai/cs285_2022_soln) 、
 
 [采样策略梯度扩展](https://github.com/BharathRajM/Sampled-Policy-Gradient-and-variants)
+
+[基于Genesis的强化学习示例](https://github.com/TokyoRobotics/torobo_genesis)
 
 [一个专门用于学习使用 Half Cheetah 模型进行强化学习的存储库](https://github.com/GustavoSanches55/HalfCheetah)
 
@@ -1873,6 +2013,8 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [使用 MyCobot 的机械臂任务强化学习框架](https://github.com/matinmoezzi/MyCobotGym)
 
+[一个用于构建自主系统的沙盒。从自动驾驶汽车开始。由MockaSort Studio精心打造](https://github.com/MockaSort-Studio/ADP8)
+
 [通过深度强化学习灵巧地弹奏钢琴](https://github.com/google-research/robopianist)
 
 
@@ -1891,6 +2033,10 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [飞行和漂浮模型，例如四旋翼飞行器、悬挂有效载荷的四旋翼飞行器等](https://github.com/vkotaru/udaan)
 
 [强化学习方法实现四轴飞行器的安全三维导航](https://github.com/shaikh58/quad-nav-rl)
+
+[协作式四旋翼有效载荷运输的分层控制](https://github.com/ificiana/csd)
+
+[探索如何利用受椋鸟启发的无人机群来可视化看不见的火灾动态，从而增强消防员的态势感知和安全](https://github.com/Jybbs/thermur)
 
 [无人机RL](https://github.com/jasonjabbour/DroneRL)
 
@@ -1928,10 +2074,37 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [Brax 是一种快速且完全可微分的物理引擎](https://github.com/CLeARoboticsLab/friction-estimator) - [其他1](https://github.com/suddenabnormalsecrets/brax)
 
 
+[用于机器人强化学习端到端开发的工具集](https://github.com/Zolkin1/robot_rl)
+
+[RoboVerse：面向可扩展和可泛化的机器人学习的统一平台、数据集和基准](https://github.com/RoboVerseOrg/RoboVerse)
 
 [MuJoCo 物理模拟器的 GPU 优化版本](https://github.com/google-deepmind/mujoco_warp)
 
+[MolmoSpaces：一个用于机器人操作和导航的大型开放生态系统](https://github.com/allenai/molmospaces)
+
+[由 MuJoCo-Warp 提供支持的 Isaac Lab API，用于强化学习和机器人研究](https://github.com/mujocolab/mjlab)
+
 [使用 LLM 实现全自动具身模拟](https://github.com/MetaX-MACA/Embodied_AI_Simulation)
+
+[强化学习训练评估框架](https://github.com/UoA-CARES/cares_reinforcement_learning)
+
+[mjswan 是一个功能强大的框架，用于创建具有实时策略控制的交互式 MuJoCo 仿真，并且完全在浏览器中运行](https://github.com/ttktjmt/mjswan)
+
+[Newton 是一款基于NVIDIA Warp 的GPU 加速物理模拟​​引擎](https://github.com/newton-physics/newton)
+
+[XLeRobot：实用型双臂移动家用机器人，售价 660 美元](https://github.com/Vector-Wangel/XLeRobot)
+
+[基于 Isaac Lab–Arena 构建的统一基准测试中心，用于实现具身人工智能，提供一致的界面、逼真的环境、多机器人支持和随时可运行的大规模评估](https://github.com/LightwheelAI/LW-BenchHub)
+
+[用于在 JAX 中快速进行单智能体强化学习实验 • 端到端的 JAX 强化学习](https://github.com/EdanToledo/Stoix)
+
+[RLinf：面向具身和智能体的强化学习基础设施](https://github.com/RLinf/RLinf)
+
+[一个模块化、原始优先、Python优先的PyTorch强化学习库](https://github.com/pytorch/rl)
+
+[ToddlerBot 是一个低成本、开源的人形机器人平台，专为机器人和人工智能领域的可扩展策略学习和研究而设计](https://github.com/hshi74/toddlerbot)
+
+[Safari SDK：适用于 Google DeepMind Gemini 机器人模型的 SDK](https://github.com/google-deepmind/gemini-robotics-sdk)
 
 [人机交互强化学习套件](https://github.com/huggingface/gym-hil)
 
@@ -1983,6 +2156,12 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [一种多功能模块化框架，使用框图方法运行/模拟动态系统](https://github.com/implementedrobotics/BlockFlow)
 
+[Dimensional 是用于物理空间的智能体操作系统。Vibecode 可以用自然语言为类人机器人、四足机器人、无人机和其他硬件平台编写代码，并构建与物理输入（摄像头、激光雷达、执行器）无缝协作的多智能体系统](https://github.com/dimensionalOS/dimos)
+
+[强化学习研究框架](https://github.com/nico-bohlinger/RL-X) - 包括人形机器人
+
+[这是一个用于 LeKiwi 机器人软件开发的综合性单体仓库，集成了仿真、控制和机器学习功能](https://github.com/Ekumen-OS/lekiwi)
+
 [在加速器硬件上进行大规模并行刚体物理模拟](https://github.com/google/brax)
 
 [通才generalist](https://github.com/grahamannett/generalist)
@@ -1994,9 +2173,68 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [将 robot urdf 文件转换为 mjcf 的工具](https://github.com/FFTAI/Wiki-GRx-MJCF) - [将 URDF 模型转换为 MJCF 模型的实用工具](https://github.com/ipa320/urdf2mjcf) - [其他](https://github.com/kscalelabs/urdf2mjcf)
 
+[MuJoCo 到 OpenUSD 数据转换器](https://github.com/newton-physics/mujoco-usd-converter)
+
+[从 Python 或命令行编译 xacro 文件为纯 URDF 或 MJCF（无需 ROS）](https://github.com/adamheins/xacrodoc)
+
 [用于将MJCF（MuJoCo 建模格式）机器人模型文件中的有限元素转换为 URDF 的脚本](https://github.com/Yasu31/mjcf_urdf_simple_converter)
 
 [基于 Web 的模拟环境可视化工具](https://github.com/NVlabs/sim-web-visualizer)
+
+[一个用于创建、部署和使用隔离执行环境以进行智能体强化学习训练的端到端框架，采用 Gymnasium 风格的简单 API 构建](https://github.com/meta-pytorch/OpenEnv)
+
+[用于 MJCF（MuJoCo XML）文件的重运行数据加载器](https://github.com/Reimagine-Robotics/rerun-loader-mjcf)
+
+[适用于 MuJoCo 3.x 的轻量级交互式场景编辑器。在浏览器中创建或编辑场景，以放置形状、导入网格、添加机器人和交互式编辑元素](https://github.com/markusgrotz/mujoco-scene-editor)
+
+[Python中的机器人描述](https://github.com/robot-descriptions/robot_descriptions.py)
+
+[RL Games：高性能强化学习库](https://github.com/Denys88/rl_games)
+
+[Gymnasium 上的快速强化学习框架，采用 PPO 和 REINFORCE 算法](https://github.com/tsilva/gymsolve)
+
+[人机交互强化学习套件](https://github.com/huggingface/gym-hil)
+
+[PNDbotics RL 健身房](https://github.com/pndbotics/pnd_rl_gym)
+
+[面向认知机器人语义数字孪生的统一API](https://github.com/cram2/semantic_digital_twin)
+
+[myo_tools是一系列旨在支持涉及人体具身性和具身运动的常见工作流程的功能和实用程序集合](https://github.com/myolab/myo_tools)
+
+[VisionOS App + Python 库，用于从 Vision Pro 传输手部跟踪数据，以及向 Vision Pro 传输视频/音频流](https://github.com/Improbable-AI/VisionProTeleop)
+
+[用于跟踪不同任务中双手操作的进展情况](https://github.com/AKS-Lab-Univertsity-of-Tartu/bimanual_manipulation)
+
+[一个用于运行强化学习 (RL) 实验、训练智能体和调优超参数的框架](https://github.com/lelis-research/MDP-Experiment-Framework) - 它支持多种环境，使用 TensorBoard 进行日志记录，并使用 Optuna 实现自动超参数优化
+
+[用于模拟封装在Gymnasium式环境中的物理微分方程，该环境基于JAX框架构建](https://github.com/ExcitingSystems/exciting-environments)
+
+[一种强化学习框架，用于在持续学习场景中探索网络拓扑结构](https://github.com/kat-ko/topology-playground)
+
+[由Physical Intelligence 团队发布的用于机器人的开源模型和软件包](https://github.com/Physical-Intelligence/openpi) - 包括基于流程的视觉-语言-动作模型 (VLA)、基于 FAST 动作分词器的自回归 VLA 模型
+
+[一个用于在增强现实中使用 Apple Vision Pro 和其他 AR 设备可视化 MuJoCo 物理模拟的 Python 包](https://github.com/Improbable-AI/mujoco-ar-viewer)
+
+[Genesis强化学习（RL）框架](https://github.com/Jcouronne/Genesis-RL)
+
+[Judo：一个可定制的基于采样的MPC工具箱](https://github.com/bdaiinstitute/judo)
+
+[一个即插即用的机器人部署框架](https://github.com/HansZ8/RoboJuDo)
+
+[一个用于机器人学习研究和模拟到视觉效果的GPU加速环境综合套件，基于MuJoCo MJX构建](https://github.com/LinFei83/mujoco_playground)
+
+[MuJoCo MJX的 PyTorch 移植版，将 GPU 加速的物理模拟引入 PyTorch 生态系统，并提供完整的 torch.compile支持torch.vmap](https://github.com/vmoens/mujoco-torch)
+
+[高质量的单文件实现深度强化学习算法，具有便于研究的特性（PPO、DQN、C51、DDPG、TD3、SAC、PPG）](https://github.com/ameliakuang/cleanrl_obj_centric)
+
+
+[用于生成 Mujoco 模型的动画，进而可用于训练机器人执行定制行为](https://github.com/kscalelabs/mujoco-animator)
+
+[本项目提供了一个框架，用于通过XR（VR/AR）输入设备在机器人硬件和MuJoCo仿真中控制机器人。它允许用户使用通过XR控制器捕捉到的自然手部动作来操控机器人手臂](https://github.com/XR-Robotics/XRoboToolkit-Teleop-Sample-Python)
+
+[旨在对多任务和元强化学习进行基准测试的机器人环境集合](https://github.com/Farama-Foundation/Metaworld)
+
+[用于处理 MuJoCo MJCF 模型的常用工具](https://github.com/janelia-anibody/mujoco_utils)
 
 [评估各种 DRL 算法在功耗和性能之间的权衡](https://github.com/lucastrefezza/reinforcement-learning-sustainability-benchmark)
 
@@ -2053,6 +2291,10 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 [SERL：用于样本高效机器人强化学习的软件套件](https://github.com/rail-berkeley/serl) - [其他](https://github.com/serl-robot/serl)
 
 [为许多有用的机器人库提供通用 API](https://github.com/Tass0sm/corallab-lib)
+
+[Dimensional 是用于物理空间的智能体操作系统。Vibecode 可以用自然语言为类人机器人、四足机器人、无人机和其他硬件平台编写代码，并构建与物理输入（摄像头、激光雷达、执行器）无缝协作的多智能体系统。](https://github.com/dimensionalOS/dimos)
+
+[受 Isaac Lab 和 Gymnasium 启发，用于 Genesis 的模块化机器人训练框架](https://github.com/jgillick/genesis-forge)
 
 [MCPHC_old](https://github.com/NamiNaziri/MCPHC_old)
 
@@ -2148,9 +2390,23 @@ https://github.com/google-deepmind/mujoco/network/dependents?dependents_before=N
 
 [InterGP](https://github.com/tdardinier/InterGP) - 收集数据、训练代理的流程
 
+[深度强化学习课程完成的近端策略优化作业](https://github.com/caiopetruccirosa/half-cheetah-ppo)
+
+[一个促进知识共享的个人研发实验室](https://github.com/hongbo-miao/hongbomiao.com)
+
+[Dominik-Projects](https://github.com/Dominik-Sidorczuk/Dominik-Projects)
+
+[Go2-Unity](https://github.com/rohit-kumar-j/Go2-Unity)
+
 [ACM AI 所有研讨会内容代码等的存储库](https://github.com/acmucsd/acm-ai-workshops) - 内容按季度组织
 
+[涵盖广泛主题的仿真代码和示例](https://github.com/kernelshreyak/simulations)
+
 [Docker Wiki 和示例](https://github.com/dotd/docker_wiki)
+
+[一个使用行为克隆（BC）和近端策略优化（PPO）来训练被动行走者的综合强化学习项目](https://github.com/yunusdanabas/passive_walker_rl)
+
+[sim2real-trunk](https://github.com/vandaele/sim2real-trunk)
 
 [ClearML_SCHOOL](https://github.com/MichaelNed/ClearML_SCHOOL)
 

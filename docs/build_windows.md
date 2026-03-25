@@ -157,6 +157,19 @@ __3.__ 编译修改后的引擎：
 </Configuration>
 ```
 
+* 编译shader的线程控制
+
+这个需要去BaseEngine.ini去找。同样有好几个层级，工程目录下也有。 比较关键的是
+```ini
+[DevOptions.Shaders]
+...
+NumUnusedShaderCompilingThreads=3
+; Make sure the game has enough cores available to maintain reasonable performance
+NumUnusedShaderCompilingThreadsDuringGame=4
+```
+把这两个数字调大一点，尤其是第一个。越大预留的线程越多，ShaderCompiler调度的线程就越少。
+
+
 （3）清理配置文件。完成编译后，在执行 `make launch` 之前，务必删除 `BuildConfiguration.xml` 文件中新增的内容。否则，可能导致程序运行时出现卡顿或性能下降的问题。
 
 __4.__ 设置虚幻引擎变量

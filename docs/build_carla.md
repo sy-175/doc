@@ -25,7 +25,7 @@
 
 ### 科学上网 <span id="internet"></span>
 
-参考其中的一个链接进行科学上网的订阅和环境配置：[链接1](https://www.starlinkcloud.cc/#/register?code=Ob4iMh8u) 、[链接2](https://portal.shadowsocks.au/) 、[链接3](https://mk.mikadonet.xyz/#/login) 、[链接4](https://711jsq.club/#/login) 。
+参考其中的一个链接进行科学上网的订阅和环境配置：[链接1](https://www.starlinkcloud.cc/#/register?code=Ob4iMh8u) 、[链接2](https://stellar.dog/signup?c=vyhcgy)  、[链接3](https://st2.hosbb.com/#/register?code=8l6ICkpN) 。
 比如使用Clash，首先在`配置`页面下根据订阅链接进行下载，然后在`常规`页面开启`系统代理`，最后测试是否可以正常科学上网（有些支持在客户端中登录账户即可使用）。并确认代理的端口（比如10090）。
 
 ```shell
@@ -42,7 +42,15 @@ git config --global --unset https.proxy
 
 ### Steamapp 加速
 
-[下载地址](https://steampp.net/) 。
+[下载地址](https://steampp.net/) 。定制软件启动的特性：
+
+* 默认启动加速页面：
+
+    将`steam/AppData/Settings/UISettings.json`设置为`  "StartDefaultPageName": "Accelerator-CommunityFix"`
+
+* 启动软件时默认开启加速：
+
+    将`steam/AppData/Plugins/Accelerator/Settings/ProxySettings.json`设置为`"ProgramStartupRunProxy": true,`
 
 ### Github 访问加速
 

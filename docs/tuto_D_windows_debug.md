@@ -73,7 +73,7 @@
 
 CarlaUE4.sln配置为`Debug Editor`时编译报错：
 
-* 错误	LNK2038	检测到“_ITERATOR_DEBUG_LEVEL(迭代的调试级别)”的不匹配项: 值“2(当前工程为Debug)”不匹配值“0(Release)”：引用了 release 的库
+* 错误	LNK2038	检测到“_ITERATOR_DEBUG_LEVEL(迭代的调试级别)”的不匹配项: 值“2(链接的库为Debug)”不匹配值“0(当前工程为Release)”：引用了 release 的库
 * LNK2038	检测到“RuntimeLibrary”的不匹配项: 值“MDd_DynamicDebug”不匹配值“MD_DynamicRelease”(SharedPCH.UnrealEd.h.obj 中)	；项目为 CarlaUE4; 文件为：`Unreal\CarlaUE4\Intermediate\ProjectFiles\rpc.lib(format.obj)` （引用的需要是 debug，但SharedPCH.UnrealEd.h设置成 release）
 ```text
 LNK2038	mismatch detected for 'RuntimeLibrary': 
@@ -83,9 +83,21 @@ value 'MD_DynamicRelease' 项目对应的，当前的lib，一般都要和文件
 ```
 即：Release 库使用了 Debug 的库。
 
+Examples\CppClient\out\build\x64-Debug\Detour-d.lib(DetourNavMesh.obj) : error LNK2038: 检测到“_ITERATOR_DEBUG_LEVEL”的不匹配项: 值“0”(链接的库位release)不匹配值“2”（当前工程为debug）(basic_usage.cpp.obj 中)
 
-解决：需要将虚幻的 SharedPCH.UnrealEd.h.obj 编译为debug模式。
+
+解决：需要将虚幻的 SharedPCH.UnrealEd.h.obj [编译为 debug 模式](https://blog.csdn.net/mrbaolong/article/details/114947090) 。
 PCH (PreCompiled Headers) 是一种宏管理方法，
+
+
+Carla.Build.cs 中说明了：在Windows环境下，虚幻引擎（Unreal）即使在调试模式下也使用 Release C++ 运行时（CRT），因此除非我们重新编译引擎，否则无法链接调试库。
+
+这是因为调试虚幻引擎项目时，Debug C++运行时库的作用不大，而且与 Debug CRT 库链接会迫使我们的第三方库依赖项也使用 Debug CRT 进行编译（通常性能会更低）。为了调试程序代码，需要单独复制第三方静态库的调试版本，这通常很不方便。
+
+
+`\MDd` ：Multi-threaded Debug DLL。
+
+通过CppClient运行的客户端连接CarlaUE4.exe会显示`log_warning()`（LibCarla/source/carla/trafficmanager/InMemoryMap.cpp）的警告信息。
 
 
 1.打开`x64 Native Tools Command for VS 2019`
