@@ -8,7 +8,6 @@
 本项目提供一个完整的实战教程，演示如何在 Windows 11 环境下使用 Docker 部署 OpenClaw 具身智能代理底座。针对原生架构在多模态与本地资源管理上的局限，本方案通过自建 **MAS (Multi-Agent Surrogate) 智能路由代理**，成功对接 SiliconFlow 平台，实现了多模态专家模型（DeepSeek 与 Qwen 系列）的动态分发，并内置了严密的物理隔离与资源熔断防线。
 
 本教程记录了从底层重构到部署落地的所有详细步骤与**海量踩坑经验**，极具实战参考价值。
-<<<<<<< HEAD
 
 ## 示意图
 ```mermaid
@@ -72,11 +71,6 @@ graph TD
     Sanitizer -->|8. 零缓冲纯净透传| Gateway
     Gateway -->|渲染显示| User
 ```
-
-=======
->>>>>>> 2efc0e42162b696b5b73364e63e9dee4ab835163
-
----
 
 ## 📑 Table of Contents / 目录
 
