@@ -9,7 +9,9 @@
 
 本教程记录了从底层重构到部署落地的所有详细步骤与**海量踩坑经验**，极具实战参考价值。
 
----
+## 示意图
+
+![OpenClaw Experts Matrix Architecture](../img/software/expert-matrix.svg)
 
 ## 📑 Table of Contents / 目录
 
