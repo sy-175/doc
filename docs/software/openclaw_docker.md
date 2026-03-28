@@ -93,7 +93,7 @@ cd openclaw
 ### 第三步：部署架构重构模板与魔改工具库
 ```powershell
 # 克隆本仓库部署模板
-git clone https://github.com/Syysean/openclaw-deepseek-deploy D:\AI\openclaw-deploy
+git clone https://github.com/Syysean/openclaw-expert-matrix D:\AI\openclaw-deploy
 
 # 覆盖核心网关、编排文件与环境变量
 Copy-Item D:\AI\openclaw-deploy\proxy.js D:\AI\openclaw\proxy.js -Force
@@ -297,4 +297,4 @@ Incoming Request -> [Payload Inspector]
 
 **湖南工商大学 机器人工程专业 本科在读** 
 
-欢迎大家进行讨论和复现。如有问题或优化建议，欢迎提交 [Issue](https://github.com/Syysean/openclaw-deepseek-deploy/issues) 或 PR！
+欢迎大家进行讨论和复现。如有问题或优化建议，欢迎提交 [Issue](https://github.com/Syysean/openclaw-expert-matrix/issues) 或 PR！
