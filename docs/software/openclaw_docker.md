@@ -216,9 +216,6 @@ docker compose run --rm openclaw-cli devices approve <requestId>
 
 ## ❗ 常见报错与解决方法
 
-<details markdown="1">
-<summary> <b>🔥 点击展开查看完整排障档案</b> </summary>
-
 #### [容器与镜像级异常]
 
 **1. `pull access denied for openclaw`**
@@ -268,9 +265,6 @@ docker compose run --rm openclaw-cli devices approve <requestId>
 
 **14. 僵尸工具进程永久挂起**
 - **排障**：调用 `web_fetch` 时系统卡死。请检查是否未挂载 `custom_tools/` 目录下的安全脚本（已内置 30 秒强制超时熔断锁）。
-
-</details>
-<br>
 
 ## 🔒 安全注意事项
 
