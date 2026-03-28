@@ -20,11 +20,10 @@
 - [🚀 部署步骤 (核心 10 步)](#10)
 - [🎉 部署成功示例](#_6)
 - [🛑 服务管理与停止](#_9)
-- [❗ 常见报错与解决方法 (14 问)](#14)
-- [🔒 安全注意事项](#_10)
-- [📂 仓库文件说明](#_11)
-- [📚 参考资料](#_12)
-- [👤 关于作者](#_13)
+- [❗ 常见报错与解决方法](#_13)
+- [🔒 安全注意事项](#_14)
+- [📚 参考资料](#_15)
+- [👤 关于作者](#_16)
 
 ---
 
@@ -155,13 +154,20 @@ docker compose logs siliconflow-proxy
 docker compose run --rm openclaw-cli configure
 ```
 按照向导提示依次配置：
+
 - **Gateway 位置**：选 `Local (this machine)`
+
 - **配置项目**：选 `Gateway`
+
 - **Gateway port**：填 `18789`
+
 - **Gateway bind mode**：选 `LAN (All interfaces)`
+
 - **Gateway auth**：选 `Token`
+
 - **Tailscale exposure**：选 `Off`
-- **Gateway token**：填入 `.env` 里的 OPENCLAW_GATEWAY_TOKEN
+
+- **Gateway token**：填入 `.env` 里的 `OPENCLAW_GATEWAY_TOKEN`
 
 ### 第八步：健康检查
 ```powershell
@@ -208,12 +214,13 @@ docker compose run --rm openclaw-cli devices approve <requestId>
 
 ---
 
-## ❗ 常见报错与解决方法 (14 问)
+## ❗ 常见报错与解决方法
 
-<details>
-<summary><b>🔥 点击展开查看完整排障档案</b></summary>
+<details markdown="1">
+<summary> <b>🔥 点击展开查看完整排障档案</b> </summary>
 
 #### [容器与镜像级异常]
+
 **1. `pull access denied for openclaw`**
 - **排障**：官方核心引擎尚未提供公共构建，必须在本地执行 `docker build -t openclaw:local .` 完成本地编译。
 
@@ -221,6 +228,7 @@ docker compose run --rm openclaw-cli devices approve <requestId>
 - **排障**：系统成功防御了内存溢出。通常是因为发送了未经压缩的超大载荷（如>10MB图像）击穿了 `512MB` 的物理限制。使用附带的 `ask_vision.cjs` 可进行前端拦截。
 
 #### [网络与网关路由异常]
+
 **3. `[proxy] request error: client disconnected`**
 - **排障**：若偶发，此为 Node.js 正常的长连接生命周期结束；若大面积报错且伴随 502，说明你的 API Key 触发了上游服务商的速率限制 (Rate Limit)，建议增加 Key 池数量。
 
@@ -231,6 +239,7 @@ docker compose run --rm openclaw-cli devices approve <requestId>
 - **排障**：网关绑定为局域网 (LAN) 时，必须在 `openclaw.json` 中配置 `dangerouslyAllowHostHeaderOriginFallback: true` 以允许跨域源站校验。
 
 #### [认证与权限异常]
+
 **6. `SILICONFLOW_DEEPSEEK_API_KEY is not set` / 启动报错**
 - **排障**：检查 `.env` 文件。确保多个 `SILICONFLOW_*` 变量名拼写正确，且**等号前后绝对不能有空格**。
 
@@ -244,6 +253,7 @@ docker compose run --rm openclaw-cli devices approve <requestId>
 - **排障**：新的终端（如浏览器）首次连接需执行设备签权：使用 `devices list` 查看，并用 `devices approve <id>` 批准。
 
 #### [文件与配置异常]
+
 **10. `Missing config`（Gateway 一直重启）**
 - **排障**：本仓库模板已在 `docker-compose.yml` 中附加 `--allow-unconfigured` 参数彻底解决此问题，请检查编排文件版本。
 
